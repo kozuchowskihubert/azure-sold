@@ -102,6 +102,30 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+        
+        /* Video Hero Styles */
+        video {
+            filter: brightness(0.7);
+        }
+        
+        /* Slider Transitions */
+        #slider {
+            will-change: transform;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: scale(1.1); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 3s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-gray-50 via-blue-50 to-green-50 min-h-screen">
@@ -144,20 +168,66 @@
         </div>
     </header>
 
-    <!-- Hero Section - Compact -->
-    <section class="py-12 relative overflow-hidden">
-        <div class="container mx-auto px-4 text-center">
-            <div class="inline-block mb-4">
-                <span class="bg-gradient-to-r from-blue-500 to-green-500 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+    <!-- Hero Section with Video Background -->
+    <section class="relative overflow-hidden min-h-[600px] flex items-center justify-center">
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+            <source src="ceirg.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
+        
+        <!-- Content -->
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <!-- Large Logo -->
+            <div class="mb-8 flex justify-center">
+                <div class="w-32 h-32 bg-white/95 backdrop-blur-sm rounded-3xl flex items-center justify-center border-4 border-green-500 shadow-2xl transform hover:scale-105 transition-transform">
+                    <svg viewBox="0 0 40 40" class="w-24 h-24">
+                        <!-- Lighthouse simplified icon -->
+                        <rect x="17" y="8" width="6" height="24" fill="#10B981" rx="1"/>
+                        <circle cx="20" cy="6" r="3" fill="#10B981"/>
+                        <path d="M 15 30 L 25 30 L 23 35 L 17 35 Z" fill="#059669"/>
+                        <line x1="16" y1="14" x2="24" y2="14" stroke="white" stroke-width="1"/>
+                        <line x1="16" y1="18" x2="24" y2="18" stroke="white" stroke-width="1"/>
+                        <line x1="16" y1="22" x2="24" y2="22" stroke="white" stroke-width="1"/>
+                        <line x1="16" y1="26" x2="24" y2="26" stroke="white" stroke-width="1"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <h1 class="text-6xl md:text-7xl font-bold text-white mb-4 drop-shadow-2xl">
+                CEIRG
+            </h1>
+            <p class="text-2xl md:text-3xl text-green-400 font-semibold mb-6 drop-shadow-lg">
+                Energia dla Przyszłości
+            </p>
+            
+            <div class="inline-block mb-6">
+                <span class="bg-white/95 backdrop-blur-sm text-gray-900 px-8 py-3 rounded-full text-lg font-bold shadow-2xl border-2 border-green-400">
                     ☀️ Odnawialne Źródła Energii 2024
                 </span>
             </div>
-            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                Wybierz swoją <span class="text-gradient-azure">usługę</span>
-            </h2>
-            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            
+            <p class="text-xl md:text-2xl text-white/95 mb-8 max-w-3xl mx-auto drop-shadow-lg">
                 Profesjonalne rozwiązania energetyczne w jednym miejscu
             </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="kalkulator.html" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-green-500/50 transition-all transform hover:scale-105">
+                    🧮 Oblicz Oszczędności
+                </a>
+                <a href="kontakt.html" class="bg-white/95 hover:bg-white text-gray-900 px-8 py-4 rounded-xl font-bold text-lg shadow-2xl transition-all transform hover:scale-105">
+                    📞 Bezpłatna Konsultacja
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+            <div class="animate-bounce text-white/70 text-sm">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </div>
         </div>
     </section>
 
@@ -333,6 +403,113 @@
         </div>
     </section>
 
+    <!-- Image Slider - Realizacje -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">Nasze Realizacje</h3>
+                <p class="text-xl text-gray-600">500+ zadowolonych klientów w całej Polsce</p>
+            </div>
+            
+            <!-- Slider Container -->
+            <div class="relative overflow-hidden rounded-3xl shadow-2xl">
+                <div id="slider" class="flex transition-transform duration-500 ease-in-out">
+                    
+                    <!-- Slide 1 -->
+                    <div class="min-w-full relative h-[500px]">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&h=800&fit=crop" 
+                             alt="Instalacja fotowoltaiczna na dachu" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end">
+                            <div class="p-8 text-white">
+                                <h4 class="text-3xl font-bold mb-2">Instalacja Fotowoltaiczna 10kW</h4>
+                                <p class="text-lg text-white/90">Dom jednorodzinny • Warszawa • Oszczędności: 4500 zł/rok</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="min-w-full relative h-[500px]">
+                        <img src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=1200&h=800&fit=crop" 
+                             alt="Panele słoneczne na dachu" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end">
+                            <div class="p-8 text-white">
+                                <h4 class="text-3xl font-bold mb-2">Farma Solarna 15kW</h4>
+                                <p class="text-lg text-white/90">Gospodarstwo rolne • Kraków • ROI: 6 lat</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="min-w-full relative h-[500px]">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop" 
+                             alt="Pompa ciepła" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end">
+                            <div class="p-8 text-white">
+                                <h4 class="text-3xl font-bold mb-2">Pompa Ciepła + Fotowoltaika</h4>
+                                <p class="text-lg text-white/90">Nowoczesny dom • Poznań • Całoroczna niezależność energetyczna</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 4 -->
+                    <div class="min-w-full relative h-[500px]">
+                        <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=1200&h=800&fit=crop" 
+                             alt="Magazyn energii" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end">
+                            <div class="p-8 text-white">
+                                <h4 class="text-3xl font-bold mb-2">Magazyn Energii 20kWh</h4>
+                                <p class="text-lg text-white/90">Biurowiec • Wrocław • Backup power 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 5 -->
+                    <div class="min-w-full relative h-[500px]">
+                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&h=800&fit=crop" 
+                             alt="Instalacja klimatyzacji" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end">
+                            <div class="p-8 text-white">
+                                <h4 class="text-3xl font-bold mb-2">System Klimatyzacji Multi-Split</h4>
+                                <p class="text-lg text-white/90">Apartament • Gdańsk • Efektywność A+++</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Navigation Buttons -->
+                <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 w-12 h-12 rounded-full shadow-xl flex items-center justify-center transition-all hover:scale-110 z-10">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 w-12 h-12 rounded-full shadow-xl flex items-center justify-center transition-all hover:scale-110 z-10">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Dots Indicator -->
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+                    <button onclick="goToSlide(0)" class="slider-dot w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-all"></button>
+                    <button onclick="goToSlide(1)" class="slider-dot w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-all"></button>
+                    <button onclick="goToSlide(2)" class="slider-dot w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-all"></button>
+                    <button onclick="goToSlide(3)" class="slider-dot w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-all"></button>
+                    <button onclick="goToSlide(4)" class="slider-dot w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-all"></button>
+                </div>
+            </div>
+            
+            <!-- View All Button -->
+            <div class="text-center mt-8">
+                <a href="realizacje.html" class="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl transition-all transform hover:scale-105">
+                    <span>Zobacz Wszystkie Realizacje</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Quick Stats Bar -->
     <section class="bg-gradient-to-r from-blue-600 to-green-600 py-12">
         <div class="container mx-auto px-4">
@@ -431,6 +608,59 @@
             </div>
         </div>
     </footer>
+
+    <!-- Slider JavaScript -->
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 5;
+        const slider = document.getElementById('slider');
+        const dots = document.querySelectorAll('.slider-dot');
+        
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('bg-white', 'w-8');
+                    dot.classList.remove('bg-white/70', 'w-3');
+                } else {
+                    dot.classList.add('bg-white/70', 'w-3');
+                    dot.classList.remove('bg-white', 'w-8');
+                }
+            });
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+        
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+        
+        // Auto-play slider every 5 seconds
+        let autoPlayInterval = setInterval(nextSlide, 5000);
+        
+        // Pause auto-play on hover
+        slider.addEventListener('mouseenter', () => {
+            clearInterval(autoPlayInterval);
+        });
+        
+        slider.addEventListener('mouseleave', () => {
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        });
+        
+        // Initialize
+        updateSlider();
+    </script>
 
 </body>
 </html>
