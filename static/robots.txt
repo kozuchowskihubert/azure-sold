@@ -1,0 +1,62 @@
+# robots.txt for CEIRG - Energia dla Przyszłości
+# https://azure-sold.vercel.app
+
+User-agent: *
+
+# Allow all public pages
+Allow: /
+Allow: /fotowoltaika
+Allow: /pompy-ciepla
+Allow: /magazyny-energii
+Allow: /klimatyzacja
+Allow: /kalkulator
+Allow: /dotacje
+Allow: /cennik
+Allow: /realizacje
+Allow: /blog
+Allow: /o-nas
+Allow: /kontakt
+
+# Disallow admin and client panels (private areas)
+Disallow: /panel-klienta
+Disallow: /panel-admin
+
+# Disallow login page (no value for SEO)
+Disallow: /logowanie
+
+# Allow CSS, JS, and images for rendering
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+Allow: /*.mp4
+
+# Sitemap location
+Sitemap: https://azure-sold.vercel.app/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Special instructions for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
