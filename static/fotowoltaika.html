@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Instalacje fotowoltaiczne - panele słoneczne, montaż pod klucz, dotacje">
+    <title>Fotowoltaika - Azure Solar</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'azure-blue': '#0EA5E9',
+                        'azure-cyan': '#06B6D4',
+                        'azure-green': '#10B981',
+                        'azure-emerald': '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; }
+        .gradient-azure {
+            background: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation (copy from o-nas.html) -->
+    <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <i class="fas fa-solar-panel text-4xl text-blue-500"></i>
+                    <div>
+                        <div class="text-2xl font-bold text-gray-900">Azure Solar</div>
+                        <div class="text-xs text-gray-500">Energia przyszłości</div>
+                    </div>
+                </a>
+                
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-500 transition-colors font-medium">Start</a>
+                    <a href="o-nas.html" class="text-gray-700 hover:text-blue-500 transition-colors font-medium">O nas</a>
+                    <a href="fotowoltaika.html" class="text-blue-500 font-semibold">Fotowoltaika</a>
+                    <a href="realizacje.html" class="text-gray-700 hover:text-blue-500 transition-colors font-medium">Realizacje</a>
+                    <a href="kontakt.html" class="text-gray-700 hover:text-blue-500 transition-colors font-medium">Kontakt</a>
+                    <a href="index.html#calculator" class="gradient-azure text-white px-6 py-3 rounded-lg font-semibold hover:shadow-xl transition-all">
+                        Kalkulator
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-20 gradient-azure">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <i class="fas fa-solar-panel text-7xl mb-6"></i>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                    Instalacje Fotowoltaiczne
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90">
+                    Oszczędzaj do 70% na rachunkach za prąd dzięki energii słonecznej
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+            
+            <!-- Packages -->
+            <h2 class="text-4xl font-bold text-center mb-12">Pakiety Fotowoltaiczne</h2>
+            <div class="grid md:grid-cols-3 gap-8 mb-20">
+                <div class="bg-white rounded-2xl shadow-xl border-2 border-blue-100 overflow-hidden hover:shadow-2xl transition-all">
+                    <div class="gradient-azure p-6 text-white text-center">
+                        <h3 class="text-2xl font-bold mb-2">START</h3>
+                        <div class="text-4xl font-bold mb-2">5 kW</div>
+                        <p class="text-sm opacity-90">Dla małych domów</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-3xl font-bold text-gray-900 mb-4">od 22 000 zł</div>
+                        <ul class="space-y-3 mb-6 text-gray-600">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> 12-14 paneli 400W</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Falownik 5kW</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> System mocowań</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Montaż + rozruch</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Gwarancja 25 lat</li>
+                        </ul>
+                        <a href="kontakt.html" class="block text-center gradient-azure text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                            Zapytaj o ofertę
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-2xl border-4 border-green-400 overflow-hidden transform scale-105">
+                    <div class="bg-green-500 text-white text-center py-2 font-bold">
+                        NAJPOPULARNIEJSZY
+                    </div>
+                    <div class="gradient-azure p-6 text-white text-center">
+                        <h3 class="text-2xl font-bold mb-2">OPTIMAL</h3>
+                        <div class="text-4xl font-bold mb-2">10 kW</div>
+                        <p class="text-sm opacity-90">Dla średnich domów</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-3xl font-bold text-gray-900 mb-4">od 38 000 zł</div>
+                        <ul class="space-y-3 mb-6 text-gray-600">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> 24-26 paneli 400W</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Falownik 10kW</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> System mocowań</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Montaż + rozruch</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Gwarancja 25 lat</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Monitoring WiFi</li>
+                        </ul>
+                        <a href="kontakt.html" class="block text-center bg-green-500 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                            Zapytaj o ofertę
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl border-2 border-blue-100 overflow-hidden hover:shadow-2xl transition-all">
+                    <div class="gradient-azure p-6 text-white text-center">
+                        <h3 class="text-2xl font-bold mb-2">PREMIUM</h3>
+                        <div class="text-4xl font-bold mb-2">15 kW</div>
+                        <p class="text-sm opacity-90">Dla dużych domów</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-3xl font-bold text-gray-900 mb-4">od 52 000 zł</div>
+                        <ul class="space-y-3 mb-6 text-gray-600">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> 36-38 paneli 400W</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Falownik 15kW</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> System mocowań</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Montaż + rozruch</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Gwarancja 25 lat</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Monitoring WiFi</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Optymalizatory</li>
+                        </ul>
+                        <a href="kontakt.html" class="block text-center gradient-azure text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                            Zapytaj o ofertę
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits -->
+            <h2 class="text-4xl font-bold text-center mb-12">Korzyści z Fotowoltaiki</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-green-50 rounded-xl">
+                    <i class="fas fa-piggy-bank text-5xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Oszczędności</h3>
+                    <p class="text-gray-600">Do 70% niższe rachunki za prąd</p>
+                </div>
+                <div class="text-center p-6 bg-gradient-to-br from-green-50 to-blue-50 rounded-xl">
+                    <i class="fas fa-leaf text-5xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Ekologia</h3>
+                    <p class="text-gray-600">Zerowa emisja CO2</p>
+                </div>
+                <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-green-50 rounded-xl">
+                    <i class="fas fa-coins text-5xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Dotacje</h3>
+                    <p class="text-gray-600">Do 7000 zł dofinansowania</p>
+                </div>
+                <div class="text-center p-6 bg-gradient-to-br from-green-50 to-blue-50 rounded-xl">
+                    <i class="fas fa-chart-line text-5xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Zwrot</h3>
+                    <p class="text-gray-600">Inwestycja zwraca się w 6-8 lat</p>
+                </div>
+            </div>
+
+            <!-- Process -->
+            <h2 class="text-4xl font-bold text-center mb-12">Proces Realizacji</h2>
+            <div class="grid md:grid-cols-5 gap-4">
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center text-2xl font-bold text-blue-600">1</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Konsultacja</h3>
+                    <p class="text-sm text-gray-600">Analiza potrzeb i możliwości</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center text-2xl font-bold text-green-600">2</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Projekt</h3>
+                    <p class="text-sm text-gray-600">Dobór komponentów i wycena</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center text-2xl font-bold text-blue-600">3</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Montaż</h3>
+                    <p class="text-sm text-gray-600">Profesjonalna instalacja</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center text-2xl font-bold text-green-600">4</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Podłączenie</h3>
+                    <p class="text-sm text-gray-600">Zgłoszenie i uruchomienie</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center text-2xl font-bold text-blue-600">5</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Serwis</h3>
+                    <p class="text-sm text-gray-600">Monitoring i wsparcie 24/7</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 gradient-azure">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">
+                Gotowy na własną elektrownię słoneczną?
+            </h2>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Skontaktuj się z nami i otrzymaj bezpłatną wycenę w 24h
+            </p>
+            <a href="kontakt.html" class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl transition-all hover:scale-105">
+                <i class="fas fa-phone mr-2"></i>
+                Bezpłatna wycena
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer (copy from o-nas.html) -->
+
+</body>
+</html>

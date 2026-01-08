@@ -1,0 +1,235 @@
+{
+  "name": "azure-solar-workspace",
+  "folders": [
+    {
+      "name": "🏠 Root",
+      "path": "."
+    },
+    {
+      "name": "🌐 Frontend",
+      "path": "./frontend"
+    },
+    {
+      "name": "🐍 Backend",
+      "path": "./backend"
+    },
+    {
+      "name": "☁️ Infrastructure",
+      "path": "./terraform"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/__pycache__": true,
+      "**/*.pyc": true,
+      "**/.pytest_cache": true,
+      "**/node_modules": false,
+      "**/.next": true,
+      "**/venv": false,
+      "**/.DS_Store": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/venv": true,
+      "**/.next": true,
+      "**/build": true,
+      "**/dist": true
+    },
+    "python.defaultInterpreterPath": "${workspaceFolder}/backend/venv/bin/python",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.tabSize": 4
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.tabSize": 2
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.tabSize": 2
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.tabSize": 2
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.tabSize": 2
+    },
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "tailwindCSS.includeLanguages": {
+      "typescript": "javascript",
+      "typescriptreact": "javascript"
+    },
+    "tailwindCSS.experimental.classRegex": [
+      ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+    ],
+    "typescript.tsdk": "frontend/node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "eslint.workingDirectories": [
+      "./frontend"
+    ],
+    "terminal.integrated.cwd": "${workspaceFolder}",
+    "git.ignoreLimitWarning": true
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "ms-python.black-formatter",
+      "ms-python.flake8",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "bradlc.vscode-tailwindcss",
+      "prisma.prisma",
+      "hashicorp.terraform",
+      "ms-vscode.makefile-tools",
+      "formulahendry.auto-close-tag",
+      "formulahendry.auto-rename-tag",
+      "christian-kohler.path-intellisense",
+      "wayou.vscode-todo-highlight",
+      "gruntfuggly.todo-tree",
+      "eamodio.gitlens",
+      "github.copilot"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "🚀 Start Application",
+        "type": "shell",
+        "command": "make start",
+        "problemMatcher": [],
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        }
+      },
+      {
+        "label": "⏹️ Stop Application",
+        "type": "shell",
+        "command": "make stop",
+        "problemMatcher": []
+      },
+      {
+        "label": "🐍 Start Backend Only",
+        "type": "shell",
+        "command": "cd backend && source venv/bin/activate && python run.py",
+        "problemMatcher": [],
+        "presentation": {
+          "reveal": "always",
+          "panel": "dedicated"
+        }
+      },
+      {
+        "label": "🌐 Start Frontend Only",
+        "type": "shell",
+        "command": "cd frontend && npm run dev",
+        "problemMatcher": [],
+        "presentation": {
+          "reveal": "always",
+          "panel": "dedicated"
+        }
+      },
+      {
+        "label": "📦 Install Dependencies",
+        "type": "shell",
+        "command": "make install",
+        "problemMatcher": []
+      },
+      {
+        "label": "🗄️ Initialize Database",
+        "type": "shell",
+        "command": "make db-init",
+        "problemMatcher": []
+      },
+      {
+        "label": "🧪 Run Tests",
+        "type": "shell",
+        "command": "make test",
+        "problemMatcher": []
+      },
+      {
+        "label": "🏗️ Build Production",
+        "type": "shell",
+        "command": "make build",
+        "problemMatcher": []
+      },
+      {
+        "label": "📊 Show Logs",
+        "type": "shell",
+        "command": "make logs",
+        "problemMatcher": [],
+        "isBackground": true
+      },
+      {
+        "label": "🧹 Clean Cache",
+        "type": "shell",
+        "command": "make clean",
+        "problemMatcher": []
+      }
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "🐍 Python: Flask Backend",
+        "type": "python",
+        "request": "launch",
+        "module": "flask",
+        "env": {
+          "FLASK_APP": "run.py",
+          "FLASK_ENV": "development"
+        },
+        "args": [
+          "run",
+          "--no-debugger",
+          "--no-reload"
+        ],
+        "jinja": true,
+        "justMyCode": true,
+        "cwd": "${workspaceFolder}/backend"
+      },
+      {
+        "name": "🌐 Next.js: Frontend",
+        "type": "node",
+        "request": "launch",
+        "cwd": "${workspaceFolder}/frontend",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": ["run", "dev"],
+        "serverReadyAction": {
+          "pattern": "ready - started server on .+, url: (https?://.+)",
+          "uriFormat": "%s",
+          "action": "debugWithChrome"
+        }
+      },
+      {
+        "name": "🚀 Full Stack (Backend + Frontend)",
+        "type": "node",
+        "request": "launch",
+        "compounds": [
+          "🐍 Python: Flask Backend",
+          "🌐 Next.js: Frontend"
+        ]
+      }
+    ],
+    "compounds": [
+      {
+        "name": "🚀 Full Stack",
+        "configurations": ["🐍 Python: Flask Backend", "🌐 Next.js: Frontend"],
+        "stopAll": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt • Skontaktuj się z nami | Azure Solar</title>
+    <meta name="description" content="Skontaktuj się z Azure Solar. Telefon, email, formularz kontaktowy. Odpowiemy na wszystkie pytania.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azure-blue: #0EA5E9;
+            --azure-cyan: #06B6D4;
+            --azure-green: #10B981;
+            --azure-emerald: #059669;
+            --azure-teal: #14B8A6;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .gradient-azure { background: linear-gradient(135deg, var(--azure-blue) 0%, var(--azure-green) 100%); }
+        .gradient-azure-reverse { background: linear-gradient(135deg, var(--azure-green) 0%, var(--azure-blue) 100%); }
+        .text-gradient-azure { background: linear-gradient(135deg, var(--azure-blue), var(--azure-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(14, 165, 233, 0.2); }
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .mobile-menu.active { max-height: 500px; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-item.active .faq-answer { max-height: 300px; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+        .faq-icon { transition: transform 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-blue-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 gradient-azure rounded-xl flex items-center justify-center">
+                        <i class="fas fa-solar-panel text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-gradient-azure">Azure Solar</span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-cyan-600 transition font-medium">Strona główna</a>
+                    <div class="relative group">
+                        <button class="text-gray-600 hover:text-cyan-600 transition font-medium flex items-center">
+                            Usługi <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+                            <a href="fotowoltaika.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-sky-50 hover:to-cyan-50 transition">
+                                <i class="fas fa-solar-panel text-sky-500 mr-2"></i> Fotowoltaika
+                            </a>
+                            <a href="pompy-ciepla.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 transition">
+                                <i class="fas fa-fire text-orange-500 mr-2"></i> Pompy Ciepła
+                            </a>
+                            <a href="magazyny-energii.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 transition">
+                                <i class="fas fa-battery-full text-emerald-500 mr-2"></i> Magazyny Energii
+                            </a>
+                            <a href="klimatyzacja.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition rounded-b-xl">
+                                <i class="fas fa-snowflake text-blue-500 mr-2"></i> Klimatyzacja
+                            </a>
+                        </div>
+                    </div>
+                    <a href="realizacje.html" class="text-gray-600 hover:text-cyan-600 transition font-medium">Realizacje</a>
+                    <a href="cennik.html" class="text-gray-600 hover:text-cyan-600 transition font-medium">Cennik</a>
+                    <a href="kontakt.html" class="gradient-azure text-white px-6 py-3 rounded-full hover:shadow-xl transition font-semibold">
+                        Kontakt
+                    </a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t">
+            <a href="index.html" class="block px-6 py-3 hover:bg-gray-50">Strona główna</a>
+            <a href="fotowoltaika.html" class="block px-6 py-3 hover:bg-gray-50">Fotowoltaika</a>
+            <a href="pompy-ciepla.html" class="block px-6 py-3 hover:bg-gray-50">Pompy Ciepła</a>
+            <a href="magazyny-energii.html" class="block px-6 py-3 hover:bg-gray-50">Magazyny Energii</a>
+            <a href="klimatyzacja.html" class="block px-6 py-3 hover:bg-gray-50">Klimatyzacja</a>
+            <a href="realizacje.html" class="block px-6 py-3 hover:bg-gray-50">Realizacje</a>
+            <a href="cennik.html" class="block px-6 py-3 hover:bg-gray-50">Cennik</a>
+            <a href="kontakt.html" class="block px-6 py-3 hover:bg-gray-50">Kontakt</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative gradient-azure text-white py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full mb-6">
+                <i class="fas fa-phone-volume text-2xl mr-3"></i>
+                <span class="font-semibold">Kontakt • Jesteśmy Do Twojej Dyspozycji</span>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                Skontaktuj się<br/>
+                <span class="text-cyan-200">z Nami</span>
+            </h1>
+            <p class="text-xl text-cyan-50 max-w-3xl mx-auto">
+                Odpowiemy na wszystkie pytania i pomożemy wybrać najlepsze rozwiązanie
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Cards -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 hover-lift text-center">
+                    <div class="w-16 h-16 gradient-azure rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-phone text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Telefon</h3>
+                    <p class="text-gray-600 mb-4">Pn-Pt: 8:00 - 18:00<br/>Sb: 9:00 - 14:00</p>
+                    <a href="tel:+48123456789" class="text-2xl font-bold text-cyan-600 hover:text-cyan-700">
+                        +48 123 456 789
+                    </a>
+                </div>
+
+                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 hover-lift text-center">
+                    <div class="w-16 h-16 gradient-azure rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-envelope text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Email</h3>
+                    <p class="text-gray-600 mb-4">Odpowiemy w ciągu<br/>24 godzin</p>
+                    <a href="mailto:kontakt@azure-solar.pl" class="text-xl font-bold text-cyan-600 hover:text-cyan-700">
+                        kontakt@azure-solar.pl
+                    </a>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 hover-lift text-center">
+                    <div class="w-16 h-16 gradient-azure rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-map-marker-alt text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Adres</h3>
+                    <p class="text-gray-600 mb-4">ul. Słoneczna 1<br/>00-001 Warszawa</p>
+                    <a href="#map" class="text-lg font-bold text-cyan-600 hover:text-cyan-700">
+                        Zobacz na mapie <i class="fas fa-arrow-down ml-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+                <div class="text-center mb-10">
+                    <h2 class="text-4xl font-bold mb-4">
+                        <span class="text-gradient-azure">Formularz Kontaktowy</span>
+                    </h2>
+                    <p class="text-gray-600">Wypełnij formularz, a my skontaktujemy się z Tobą</p>
+                </div>
+
+                <form class="max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                <i class="fas fa-user text-cyan-600 mr-2"></i>Imię i nazwisko*
+                            </label>
+                            <input type="text" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-cyan-500 focus:outline-none transition" placeholder="Jan Kowalski">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                <i class="fas fa-phone text-cyan-600 mr-2"></i>Telefon*
+                            </label>
+                            <input type="tel" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-cyan-500 focus:outline-none transition" placeholder="+48 123 456 789">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                <i class="fas fa-envelope text-cyan-600 mr-2"></i>Email*
+                            </label>
+                            <input type="email" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-cyan-500 focus:outline-none transition" placeholder="jan@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                <i class="fas fa-map-marked-alt text-cyan-600 mr-2"></i>Województwo*
+                            </label>
+                            <select required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-cyan-500 focus:outline-none transition">
+                                <option value="">Wybierz województwo</option>
+                                <option>dolnośląskie</option>
+                                <option>kujawsko-pomorskie</option>
+                                <option>lubelskie</option>
+                                <option>lubuskie</option>
+                                <option>łódzkie</option>
+                                <option>małopolskie</option>
+                                <option>mazowieckie</option>
+                                <option>opolskie</option>
+                                <option>podkarpackie</option>
+                                <option>podlaskie</option>
+                                <option>pomorskie</option>
+                                <option>śląskie</option>
+                                <option>świętokrzyskie</option>
+                                <option>warmińsko-mazurskie</option>
+                                <option>wielkopolskie</option>
+                                <option>zachodniopomorskie</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                <i class="fas fa-cogs text-cyan-600 mr-2"></i>Interesująca usługa
+                            </label>
+                            <select class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-cyan-500 focus:outline-none transition">
+                                <option value="">Wybierz usługę</option>
+                                <option>Fotowoltaika</option>
+                                <option>Pompa Ciepła</option>
+                                <option>Magazyn Energii</option>
+                                <option>Klimatyzacja</option>
+                                <option>Pakiet (PV + Pompa)</option>
+                                <option>Pakiet (PV + Magazyn)</option>
+                                <option>Inne</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                <i class="fas fa-home text-cyan-600 mr-2"></i>Typ budynku
+                            </label>
+                            <select class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-cyan-500 focus:outline-none transition">
+                                <option value="">Wybierz typ</option>
+                                <option>Dom jednorodzinny</option>
+                                <option>Firma / Biuro</option>
+                                <option>Gospodarstwo rolne</option>
+                                <option>Blok / Kamienica</option>
+                                <option>Magazyn / Hala</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-semibold mb-2">
+                            <i class="fas fa-comment-dots text-cyan-600 mr-2"></i>Wiadomość
+                        </label>
+                        <textarea rows="5" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-cyan-500 focus:outline-none transition" placeholder="Opisz swoje potrzeby..."></textarea>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="flex items-start">
+                            <input type="checkbox" required class="mt-1 mr-3">
+                            <span class="text-sm text-gray-600">
+                                Akceptuję <a href="#" class="text-cyan-600 hover:underline">politykę prywatności</a> i wyrażam zgodę na przetwarzanie moich danych osobowych w celu kontaktu.*
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="gradient-azure text-white px-12 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition">
+                            <i class="fas fa-paper-plane mr-2"></i>Wyślij Wiadomość
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="text-gradient-azure">Nasza Lokalizacja</span>
+                </h2>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-3xl shadow-xl overflow-hidden h-[500px]">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.2474736547787!2d21.012228776770656!3d52.22968197198204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc8cf6d8771f%3A0x4e3f36d68d4b7d2f!2sPa%C5%82ac%20Kultury%20i%20Nauki!5e0!3m2!1spl!2spl!4v1704721234567!5m2!1spl!2spl" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bg-white rounded-3xl shadow-xl p-8 mb-6">
+                        <h3 class="text-2xl font-bold mb-6">Godziny Otwarcia</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between pb-3 border-b border-gray-200">
+                                <span class="font-semibold">Poniedziałek</span>
+                                <span class="text-gray-600">8:00 - 18:00</span>
+                            </div>
+                            <div class="flex justify-between pb-3 border-b border-gray-200">
+                                <span class="font-semibold">Wtorek</span>
+                                <span class="text-gray-600">8:00 - 18:00</span>
+                            </div>
+                            <div class="flex justify-between pb-3 border-b border-gray-200">
+                                <span class="font-semibold">Środa</span>
+                                <span class="text-gray-600">8:00 - 18:00</span>
+                            </div>
+                            <div class="flex justify-between pb-3 border-b border-gray-200">
+                                <span class="font-semibold">Czwartek</span>
+                                <span class="text-gray-600">8:00 - 18:00</span>
+                            </div>
+                            <div class="flex justify-between pb-3 border-b border-gray-200">
+                                <span class="font-semibold">Piątek</span>
+                                <span class="text-gray-600">8:00 - 18:00</span>
+                            </div>
+                            <div class="flex justify-between pb-3 border-b border-gray-200">
+                                <span class="font-semibold">Sobota</span>
+                                <span class="text-gray-600">9:00 - 14:00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-semibold">Niedziela</span>
+                                <span class="text-red-600 font-semibold">Zamknięte</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-3xl p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-4">Social Media</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="#" class="bg-white/20 backdrop-blur-md hover:bg-white/30 rounded-xl p-4 text-center transition">
+                                <i class="fab fa-facebook text-3xl mb-2"></i>
+                                <div class="text-sm font-semibold">Facebook</div>
+                            </a>
+                            <a href="#" class="bg-white/20 backdrop-blur-md hover:bg-white/30 rounded-xl p-4 text-center transition">
+                                <i class="fab fa-instagram text-3xl mb-2"></i>
+                                <div class="text-sm font-semibold">Instagram</div>
+                            </a>
+                            <a href="#" class="bg-white/20 backdrop-blur-md hover:bg-white/30 rounded-xl p-4 text-center transition">
+                                <i class="fab fa-linkedin text-3xl mb-2"></i>
+                                <div class="text-sm font-semibold">LinkedIn</div>
+                            </a>
+                            <a href="#" class="bg-white/20 backdrop-blur-md hover:bg-white/30 rounded-xl p-4 text-center transition">
+                                <i class="fab fa-youtube text-3xl mb-2"></i>
+                                <div class="text-sm font-semibold">YouTube</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="text-gradient-azure">Często Zadawane Pytania</span>
+                </h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left font-bold flex justify-between items-center hover:bg-gray-100 transition">
+                        <span>Jak długo trwa realizacja instalacji fotowoltaicznej?</span>
+                        <i class="fas fa-chevron-down faq-icon text-cyan-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="py-4 text-gray-600">Realizacja standardowej instalacji PV trwa 2-3 dni robocze. Cały proces od złożenia zamówienia do uruchomienia zajmuje średnio 4-6 tygodni.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left font-bold flex justify-between items-center hover:bg-gray-100 transition">
+                        <span>Czy mogę otrzymać dotację na instalację?</span>
+                        <i class="fas fa-chevron-down faq-icon text-cyan-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="py-4 text-gray-600">Tak! Oferujemy pełną pomoc w uzyskaniu dotacji z programów: Mój Prąd (do 7000 zł), Czyste Powietrze (do 69 000 zł) oraz Ulga Termomodernizacyjna (do 53 000 zł odliczenia w PIT).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left font-bold flex justify-between items-center hover:bg-gray-100 transition">
+                        <span>Jaka jest gwarancja na instalację?</span>
+                        <i class="fas fa-chevron-down faq-icon text-cyan-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="py-4 text-gray-600">Udzielamy 25 lat gwarancji na panele fotowoltaiczne, 10 lat na inwertery, 10 lat na magazyny energii oraz 2 lata gwarancji na montaż.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left font-bold flex justify-between items-center hover:bg-gray-100 transition">
+                        <span>Czy wycena jest darmowa?</span>
+                        <i class="fas fa-chevron-down faq-icon text-cyan-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="py-4 text-gray-600">Tak, przygotowanie wyceny i wizyta w terenie są całkowicie bezpłatne i nie wiążą się z żadnymi zobowiązaniami.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left font-bold flex justify-between items-center hover:bg-gray-100 transition">
+                        <span>Czy mogę rozbudować instalację w przyszłości?</span>
+                        <i class="fas fa-chevron-down faq-icon text-cyan-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="py-4 text-gray-600">Tak, instalacje projektujemy z możliwością rozbudowy. Można dodać dodatkowe panele, magazyn energii lub pompę ciepła.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left font-bold flex justify-between items-center hover:bg-gray-100 transition">
+                        <span>Jakie są koszty eksploatacji instalacji?</span>
+                        <i class="fas fa-chevron-down faq-icon text-cyan-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="py-4 text-gray-600">Instalacje fotowoltaiczne są praktycznie bezobsługowe. Zalecamy coroczny przegląd (opcjonalny) oraz czyszczenie paneli co 1-2 lata.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left font-bold flex justify-between items-center hover:bg-gray-100 transition">
+                        <span>W jakim terminie otrzymam zwrot inwestycji?</span>
+                        <i class="fas fa-chevron-down faq-icon text-cyan-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="py-4 text-gray-600">Zwrot z inwestycji w fotowoltaikę następuje średnio po 6-8 latach. W przypadku pomp ciepła jest to 8-12 lat, w zależności od dotychczasowego źródła ogrzewania.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left font-bold flex justify-between items-center hover:bg-gray-100 transition">
+                        <span>Czy instalacja wymaga zgłoszenia do urzędu?</span>
+                        <i class="fas fa-chevron-down faq-icon text-cyan-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="py-4 text-gray-600">Instalacje do 50 kW nie wymagają pozwolenia na budowę. Zajmujemy się wszystkimi formalnościami, w tym zgłoszeniem do operatora sieci.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left font-bold flex justify-between items-center hover:bg-gray-100 transition">
+                        <span>Czy oferujecie finansowanie?</span>
+                        <i class="fas fa-chevron-down faq-icon text-cyan-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="py-4 text-gray-600">Tak, współpracujemy z bankami oferującymi preferencyjne kredyty na instalacje OZE. Pomożemy w wyborze najlepszej opcji finansowania.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left font-bold flex justify-between items-center hover:bg-gray-100 transition">
+                        <span>Co w przypadku awarii?</span>
+                        <i class="fas fa-chevron-down faq-icon text-cyan-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="py-4 text-gray-600">Oferujemy serwis 24/7. W razie awarii interweniujemy w ciągu 24 godzin. Wszystkie elementy objęte są gwarancją producenta.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-azure-reverse text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-solar-panel text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">Azure Solar</span>
+                    </div>
+                    <p class="text-cyan-100">Twój partner w odnawialnych źródłach energii</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Usługi</h4>
+                    <ul class="space-y-2 text-cyan-100">
+                        <li><a href="fotowoltaika.html" class="hover:text-white transition">Fotowoltaika</a></li>
+                        <li><a href="pompy-ciepla.html" class="hover:text-white transition">Pompy Ciepła</a></li>
+                        <li><a href="magazyny-energii.html" class="hover:text-white transition">Magazyny Energii</a></li>
+                        <li><a href="klimatyzacja.html" class="hover:text-white transition">Klimatyzacja</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Firma</h4>
+                    <ul class="space-y-2 text-cyan-100">
+                        <li><a href="o-nas.html" class="hover:text-white transition">O nas</a></li>
+                        <li><a href="realizacje.html" class="hover:text-white transition">Realizacje</a></li>
+                        <li><a href="cennik.html" class="hover:text-white transition">Cennik</a></li>
+                        <li><a href="kontakt.html" class="hover:text-white transition">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-cyan-100">
+                        <li><i class="fas fa-phone mr-2"></i> +48 123 456 789</li>
+                        <li><i class="fas fa-envelope mr-2"></i> kontakt@azure-solar.pl</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Warszawa, Polska</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-8 text-center text-cyan-100">
+                <p>&copy; 2024 Azure Solar. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn?.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const wasActive = faqItem.classList.contains('active');
+                
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                if (!wasActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

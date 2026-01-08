@@ -1,0 +1,184 @@
+{
+  "common": {
+    "companyName": "Azure Solar",
+    "tagline": "Your energy from the sun",
+    "phone": "+48 503 691 808",
+    "email": "contact@azure-solar.pl",
+    "address": "Słoneczna St. 1, 00-001 Warsaw"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "calculator": "Calculator",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact",
+    "clientPanel": "Client Panel",
+    "adminPanel": "Admin Panel",
+    "login": "Log in",
+    "logout": "Log out"
+  },
+  "hero": {
+    "title": "Solar Energy for Your Home and Business",
+    "subtitle": "Professional photovoltaic installations with full support",
+    "cta": "Free Quote",
+    "ctaSecondary": "Savings Calculator"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive photovoltaic solutions",
+    "residential": {
+      "title": "Residential Installations",
+      "description": "Complete photovoltaic systems for single-family and row houses"
+    },
+    "commercial": {
+      "title": "Commercial Installations",
+      "description": "Large solar farms for businesses and production facilities"
+    },
+    "service": {
+      "title": "Service & Maintenance",
+      "description": "Professional service and monitoring of installations"
+    },
+    "consultation": {
+      "title": "Technical Consulting",
+      "description": "Help with choosing the optimal solution and grants"
+    }
+  },
+  "calculator": {
+    "title": "Savings Calculator",
+    "subtitle": "Check how much you can save",
+    "monthlyBill": "Monthly electricity consumption (PLN)",
+    "roofArea": "Roof area (m²)",
+    "roofType": "Roof type",
+    "location": "Location",
+    "calculate": "Calculate savings",
+    "results": {
+      "title": "Your Savings",
+      "annualSavings": "Annual savings",
+      "systemPower": "System power",
+      "roi": "Return on investment",
+      "co2Reduction": "CO₂ reduction"
+    }
+  },
+  "portfolio": {
+    "title": "Our Realizations",
+    "subtitle": "See what we've already done",
+    "categories": {
+      "all": "All",
+      "residential": "Homes",
+      "commercial": "Business",
+      "industrial": "Industry"
+    },
+    "details": "View details",
+    "power": "Power",
+    "location": "Location",
+    "year": "Year of completion"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We'll answer all your questions",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "subject": "Subject",
+      "message": "Message",
+      "type": {
+        "quote": "Quote request",
+        "service": "Service",
+        "question": "General question",
+        "other": "Other"
+      },
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": "Message sent! We'll respond soon.",
+      "error": "An error occurred. Please try again."
+    }
+  },
+  "client": {
+    "dashboard": {
+      "title": "Client Panel",
+      "welcome": "Welcome back",
+      "myProjects": "My Projects",
+      "activeProjects": "Active projects",
+      "completedProjects": "Completed projects",
+      "totalSavings": "Total savings",
+      "co2Saved": "CO₂ avoided"
+    },
+    "projects": {
+      "title": "My Installations",
+      "status": {
+        "planning": "Planning",
+        "installation": "Installation",
+        "testing": "Testing",
+        "active": "Active",
+        "service": "Service"
+      },
+      "production": "Energy production",
+      "today": "Today",
+      "month": "This month",
+      "year": "This year",
+      "viewDetails": "View details"
+    },
+    "invoices": {
+      "title": "Invoices",
+      "download": "Download PDF",
+      "paid": "Paid",
+      "pending": "Pending"
+    },
+    "support": {
+      "title": "Support",
+      "newTicket": "New ticket",
+      "myTickets": "My tickets"
+    }
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Admin Panel",
+      "stats": {
+        "clients": "Clients",
+        "projects": "Projects",
+        "revenue": "Revenue",
+        "leads": "Leads"
+      }
+    },
+    "clients": {
+      "title": "Client Management",
+      "addNew": "Add client",
+      "search": "Search...",
+      "filters": "Filters"
+    },
+    "projects": {
+      "title": "Project Management",
+      "addNew": "New project",
+      "status": "Status",
+      "updateStatus": "Update status"
+    },
+    "leads": {
+      "title": "Quote Requests",
+      "new": "New",
+      "inProgress": "In progress",
+      "converted": "Converted",
+      "rejected": "Rejected"
+    },
+    "quotes": {
+      "title": "Quotes",
+      "generate": "Generate quote",
+      "send": "Send",
+      "downloadPdf": "Download PDF"
+    }
+  },
+  "footer": {
+    "about": "About us",
+    "aboutText": "Azure Solar is a professional company specializing in photovoltaic installations. We operate throughout Poland.",
+    "quickLinks": "Quick links",
+    "services": "Services",
+    "legal": "Legal information",
+    "privacy": "Privacy policy",
+    "terms": "Terms of service",
+    "rodo": "GDPR",
+    "contact": "Contact",
+    "followUs": "Follow us",
+    "rights": "All rights reserved"
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "common": {
+    "companyName": "Azure Solar",
+    "tagline": "Twoja energia ze słońca",
+    "phone": "+48 503 691 808",
+    "email": "kontakt@azure-solar.pl",
+    "address": "ul. Słoneczna 1, 00-001 Warszawa"
+  },
+  "nav": {
+    "home": "Strona główna",
+    "services": "Usługi",
+    "calculator": "Kalkulator",
+    "portfolio": "Realizacje",
+    "about": "O nas",
+    "contact": "Kontakt",
+    "clientPanel": "Panel klienta",
+    "adminPanel": "Panel administracyjny",
+    "login": "Zaloguj się",
+    "logout": "Wyloguj się"
+  },
+  "hero": {
+    "title": "Energia Słoneczna dla Twojego Domu i Firmy",
+    "subtitle": "Profesjonalne instalacje fotowoltaiczne z pełnym wsparciem",
+    "cta": "Bezpłatna wycena",
+    "ctaSecondary": "Kalkulator oszczędności"
+  },
+  "services": {
+    "title": "Nasze Usługi",
+    "subtitle": "Kompleksowa obsługa w zakresie fotowoltaiki",
+    "residential": {
+      "title": "Instalacje Domowe",
+      "description": "Kompletne systemy fotowoltaiczne dla domów jednorodzinnych i szeregowych"
+    },
+    "commercial": {
+      "title": "Instalacje Przemysłowe",
+      "description": "Wielkie farmy solarne dla firm i zakładów produkcyjnych"
+    },
+    "service": {
+      "title": "Serwis i Konserwacja",
+      "description": "Profesjonalna obsługa serwisowa i monitoring instalacji"
+    },
+    "consultation": {
+      "title": "Doradztwo Techniczne",
+      "description": "Pomoc w doborze optymalnego rozwiązania i dotacjach"
+    }
+  },
+  "calculator": {
+    "title": "Kalkulator Oszczędności",
+    "subtitle": "Sprawdź ile możesz zaoszczędzić",
+    "monthlyBill": "Miesięczne zużycie prądu (PLN)",
+    "roofArea": "Powierzchnia dachu (m²)",
+    "roofType": "Typ dachu",
+    "location": "Lokalizacja",
+    "calculate": "Oblicz oszczędności",
+    "results": {
+      "title": "Twoje Oszczędności",
+      "annualSavings": "Roczne oszczędności",
+      "systemPower": "Moc instalacji",
+      "roi": "Zwrot inwestycji",
+      "co2Reduction": "Redukcja CO₂"
+    }
+  },
+  "portfolio": {
+    "title": "Nasze Realizacje",
+    "subtitle": "Zobacz co już zrobiliśmy",
+    "categories": {
+      "all": "Wszystkie",
+      "residential": "Domy",
+      "commercial": "Firmy",
+      "industrial": "Przemysł"
+    },
+    "details": "Zobacz szczegóły",
+    "power": "Moc",
+    "location": "Lokalizacja",
+    "year": "Rok realizacji"
+  },
+  "contact": {
+    "title": "Skontaktuj się z nami",
+    "subtitle": "Odpowiemy na wszystkie pytania",
+    "form": {
+      "name": "Imię i nazwisko",
+      "email": "Email",
+      "phone": "Telefon",
+      "subject": "Temat",
+      "message": "Wiadomość",
+      "type": {
+        "quote": "Zapytanie ofertowe",
+        "service": "Serwis",
+        "question": "Pytanie ogólne",
+        "other": "Inne"
+      },
+      "submit": "Wyślij wiadomość",
+      "sending": "Wysyłanie...",
+      "success": "Wiadomość wysłana! Odpowiemy wkrótce.",
+      "error": "Wystąpił błąd. Spróbuj ponownie."
+    }
+  },
+  "client": {
+    "dashboard": {
+      "title": "Panel Klienta",
+      "welcome": "Witaj ponownie",
+      "myProjects": "Moje Projekty",
+      "activeProjects": "Aktywne projekty",
+      "completedProjects": "Ukończone projekty",
+      "totalSavings": "Całkowite oszczędności",
+      "co2Saved": "Uniknięte CO₂"
+    },
+    "projects": {
+      "title": "Moje Instalacje",
+      "status": {
+        "planning": "Planowanie",
+        "installation": "Instalacja",
+        "testing": "Testy",
+        "active": "Aktywna",
+        "service": "Serwis"
+      },
+      "production": "Produkcja energii",
+      "today": "Dziś",
+      "month": "Ten miesiąc",
+      "year": "Ten rok",
+      "viewDetails": "Zobacz szczegóły"
+    },
+    "invoices": {
+      "title": "Faktury",
+      "download": "Pobierz PDF",
+      "paid": "Opłacona",
+      "pending": "Oczekująca"
+    },
+    "support": {
+      "title": "Wsparcie",
+      "newTicket": "Nowe zgłoszenie",
+      "myTickets": "Moje zgłoszenia"
+    }
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Panel Administracyjny",
+      "stats": {
+        "clients": "Klienci",
+        "projects": "Projekty",
+        "revenue": "Przychód",
+        "leads": "Zapytania"
+      }
+    },
+    "clients": {
+      "title": "Zarządzanie Klientami",
+      "addNew": "Dodaj klienta",
+      "search": "Szukaj...",
+      "filters": "Filtry"
+    },
+    "projects": {
+      "title": "Zarządzanie Projektami",
+      "addNew": "Nowy projekt",
+      "status": "Status",
+      "updateStatus": "Aktualizuj status"
+    },
+    "leads": {
+      "title": "Zapytania Ofertowe",
+      "new": "Nowe",
+      "inProgress": "W toku",
+      "converted": "Przekonwertowane",
+      "rejected": "Odrzucone"
+    },
+    "quotes": {
+      "title": "Oferty",
+      "generate": "Generuj ofertę",
+      "send": "Wyślij",
+      "downloadPdf": "Pobierz PDF"
+    }
+  },
+  "footer": {
+    "about": "O firmie",
+    "aboutText": "Azure Solar to profesjonalna firma specjalizująca się w instalacjach fotowoltaicznych. Działamy na terenie całej Polski.",
+    "quickLinks": "Szybkie linki",
+    "services": "Usługi",
+    "legal": "Informacje prawne",
+    "privacy": "Polityka prywatności",
+    "terms": "Regulamin",
+    "rodo": "RODO",
+    "contact": "Kontakt",
+    "followUs": "Śledź nas",
+    "rights": "Wszelkie prawa zastrzeżone"
+  }
+}

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimatyzacja • Komfort Przez Cały Rok | Azure Solar</title>
+    <meta name="description" content="Klimatyzacja klasy A+++. Montaż w 1 dzień. Ogrzewanie i chłodzenie przez cały rok. 10 lat gwarancji.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azure-blue: #0EA5E9;
+            --azure-cyan: #06B6D4;
+            --azure-green: #10B981;
+            --azure-emerald: #059669;
+            --azure-teal: #14B8A6;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .gradient-azure { background: linear-gradient(135deg, var(--azure-blue) 0%, var(--azure-green) 100%); }
+        .gradient-azure-reverse { background: linear-gradient(135deg, var(--azure-green) 0%, var(--azure-blue) 100%); }
+        .gradient-teal { background: linear-gradient(135deg, var(--azure-teal) 0%, var(--azure-emerald) 100%); }
+        .text-gradient-azure { background: linear-gradient(135deg, var(--azure-blue), var(--azure-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(14, 165, 233, 0.2); }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .mobile-menu.active { max-height: 500px; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-blue-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 gradient-azure rounded-xl flex items-center justify-center">
+                        <i class="fas fa-solar-panel text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-gradient-azure">Azure Solar</span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-cyan-600 transition font-medium">Strona główna</a>
+                    <div class="relative group">
+                        <button class="text-gray-600 hover:text-cyan-600 transition font-medium flex items-center">
+                            Usługi <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+                            <a href="fotowoltaika.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-sky-50 hover:to-cyan-50 transition">
+                                <i class="fas fa-solar-panel text-sky-500 mr-2"></i> Fotowoltaika
+                            </a>
+                            <a href="pompy-ciepla.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 transition">
+                                <i class="fas fa-fire text-orange-500 mr-2"></i> Pompy Ciepła
+                            </a>
+                            <a href="magazyny-energii.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 transition">
+                                <i class="fas fa-battery-full text-emerald-500 mr-2"></i> Magazyny Energii
+                            </a>
+                            <a href="klimatyzacja.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition rounded-b-xl">
+                                <i class="fas fa-snowflake text-blue-500 mr-2"></i> Klimatyzacja
+                            </a>
+                        </div>
+                    </div>
+                    <a href="realizacje.html" class="text-gray-600 hover:text-cyan-600 transition font-medium">Realizacje</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-cyan-600 transition font-medium">Blog</a>
+                    <a href="o-nas.html" class="text-gray-600 hover:text-cyan-600 transition font-medium">O nas</a>
+                    <a href="kontakt.html" class="gradient-azure text-white px-6 py-3 rounded-full hover:shadow-xl transition font-semibold">
+                        Kontakt
+                    </a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t">
+            <a href="index.html" class="block px-6 py-3 hover:bg-gray-50">Strona główna</a>
+            <a href="fotowoltaika.html" class="block px-6 py-3 hover:bg-gray-50">Fotowoltaika</a>
+            <a href="pompy-ciepla.html" class="block px-6 py-3 hover:bg-gray-50">Pompy Ciepła</a>
+            <a href="magazyny-energii.html" class="block px-6 py-3 hover:bg-gray-50">Magazyny Energii</a>
+            <a href="klimatyzacja.html" class="block px-6 py-3 hover:bg-gray-50">Klimatyzacja</a>
+            <a href="realizacje.html" class="block px-6 py-3 hover:bg-gray-50">Realizacje</a>
+            <a href="blog.html" class="block px-6 py-3 hover:bg-gray-50">Blog</a>
+            <a href="o-nas.html" class="block px-6 py-3 hover:bg-gray-50">O nas</a>
+            <a href="kontakt.html" class="block px-6 py-3 hover:bg-gray-50">Kontakt</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative gradient-azure text-white py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-64 h-64 bg-white rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl animate-float" style="animation-delay: 1s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full mb-6">
+                    <i class="fas fa-snowflake text-2xl mr-3"></i>
+                    <span class="font-semibold">Klimatyzacja • Komfort Przez Cały Rok</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                    Klimatyzacja<br/>
+                    <span class="text-cyan-200">Ogrzewanie + Chłodzenie</span>
+                </h1>
+                <p class="text-xl text-cyan-50 max-w-3xl mx-auto mb-8">
+                    Profesjonalna klimatyzacja z funkcją grzania. Komfort latem i zimą. 
+                    Montaż w 1 dzień. Cicha praca. Najwyższa efektywność energetyczna.
+                </p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center">
+                    <div class="text-4xl font-bold mb-2">A+++</div>
+                    <div class="text-cyan-100">Klasa Efektywności</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center">
+                    <div class="text-4xl font-bold mb-2">-25°C</div>
+                    <div class="text-cyan-100">do +50°C</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center">
+                    <div class="text-4xl font-bold mb-2">1 dzień</div>
+                    <div class="text-cyan-100">Montaż</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center">
+                    <div class="text-4xl font-bold mb-2">10 lat</div>
+                    <div class="text-cyan-100">Gwarancja</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-gradient-azure">Zalety</span> Naszych Klimatyzacji
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Najwyższa jakość i efektywność energetyczna
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-snowflake text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Chłodzenie + Grzanie</h3>
+                    <p class="text-gray-600">
+                        Komfort przez cały rok. Latem chłodzi, zimą ogrzewa. Wydajność do -25°C. 
+                        Oszczędność vs tradycyjne ogrzewanie: do 70%.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 hover-lift">
+                    <div class="w-16 h-16 gradient-teal rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-leaf text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Klasa A+++</h3>
+                    <p class="text-gray-600">
+                        Najwyższa efektywność energetyczna. SCOP 5.1 dla ogrzewania. 
+                        Niskie rachunki za prąd przy maksymalnym komforcie.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-volume-off text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Cicha Praca</h3>
+                    <p class="text-gray-600">
+                        Jednostka wewnętrzna od 19 dB(A) - ciszej niż szept. 
+                        Tryb nocny dla niezakłóconego snu.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-wind text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Oczyszczanie Powietrza</h3>
+                    <p class="text-gray-600">
+                        Filtry plazmowe i katechinowe. Eliminacja bakterii, wirusów i alergenów. 
+                        Zdrowe powietrze w Twoim domu.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl p-8 hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Sterowanie WiFi</h3>
+                    <p class="text-gray-600">
+                        Kontrola przez aplikację mobilną. Ustaw temperaturę przed powrotem do domu. 
+                        Kompatybilność z Google Home i Alexa.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Szybki Montaż</h3>
+                    <p class="text-gray-600">
+                        Profesjonalny montaż w 1 dzień. Certyfikowani instalatorzy. 
+                        10 lat gwarancji na urządzenie.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-gradient-azure">Oferta</span> Klimatyzacji
+                </h2>
+                <p class="text-xl text-gray-600">Dopasujemy system do wielkości Twojego pomieszczenia</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Package 1 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="inline-block bg-gradient-to-br from-blue-100 to-cyan-100 px-6 py-2 rounded-full text-blue-600 font-semibold mb-4">
+                            SPLIT
+                        </div>
+                        <h3 class="text-3xl font-bold mb-2">2.5 kW</h3>
+                        <div class="text-4xl font-bold text-gradient-azure mb-2">3 500 zł</div>
+                        <p class="text-gray-600">Jedno pomieszczenie</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">1 jednostka wewnętrzna</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">1 jednostka zewnętrzna</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Powierzchnia do 25 m²</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Klasa A+++</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Sterowanie WiFi</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Montaż w 1 dzień</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">10 lat gwarancji</span>
+                        </li>
+                    </ul>
+                    <a href="kontakt.html" class="block w-full gradient-azure text-white text-center py-4 rounded-xl font-semibold hover:shadow-xl transition">
+                        Zamów teraz
+                    </a>
+                </div>
+
+                <!-- Package 2 - Popular -->
+                <div class="bg-white rounded-3xl p-8 shadow-2xl hover-lift relative border-4 border-blue-500 transform scale-105">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                        <span class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                            POLECANY
+                        </span>
+                    </div>
+                    <div class="text-center mb-6 mt-4">
+                        <div class="inline-block bg-gradient-to-br from-emerald-100 to-teal-100 px-6 py-2 rounded-full text-emerald-600 font-semibold mb-4">
+                            MULTI-SPLIT
+                        </div>
+                        <h3 class="text-3xl font-bold mb-2">2x 3.5 kW</h3>
+                        <div class="text-4xl font-bold text-gradient-azure mb-2">8 000 zł</div>
+                        <p class="text-gray-600">Dwa pomieszczenia</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">2 jednostki wewnętrzne</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">1 jednostka zewnętrzna</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">2x do 30 m²</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Klasa A+++</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Sterowanie WiFi</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Montaż w 2 dni</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">10 lat gwarancji</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">1 agregat zewnętrzny</span>
+                        </li>
+                    </ul>
+                    <a href="kontakt.html" class="block w-full gradient-teal text-white text-center py-4 rounded-xl font-semibold hover:shadow-xl transition">
+                        Zamów teraz
+                    </a>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="inline-block bg-gradient-to-br from-purple-100 to-pink-100 px-6 py-2 rounded-full text-purple-600 font-semibold mb-4">
+                            VRF/VRV
+                        </div>
+                        <h3 class="text-3xl font-bold mb-2">Custom</h3>
+                        <div class="text-4xl font-bold text-gradient-azure mb-2">od 20 000 zł</div>
+                        <p class="text-gray-600">Cały dom / firma</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Do 64 jednostek wewnętrznych</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Centralne sterowanie</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Dowolna powierzchnia</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Klasa A+++</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">System BMS</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Montaż 5-7 dni</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">10 lat gwarancji</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Dedykowany projekt</span>
+                        </li>
+                    </ul>
+                    <a href="kontakt.html" class="block w-full gradient-azure text-white text-center py-4 rounded-xl font-semibold hover:shadow-xl transition">
+                        Wycena indywidualna
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Efficiency Classes -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-gradient-azure">Klasy</span> Efektywności Energetycznej
+                </h2>
+                <p class="text-xl text-gray-600">Co oznaczają etykiety energetyczne?</p>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <thead class="gradient-azure text-white">
+                        <tr>
+                            <th class="px-6 py-4 text-left">Klasa</th>
+                            <th class="px-6 py-4 text-center">SCOP (Ogrzewanie)</th>
+                            <th class="px-6 py-4 text-center">SEER (Chłodzenie)</th>
+                            <th class="px-6 py-4 text-left">Opis</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-emerald-50 transition bg-emerald-50/50">
+                            <td class="px-6 py-4 font-bold text-emerald-600 text-xl">A+++</td>
+                            <td class="px-6 py-4 text-center font-semibold">≥ 5.1</td>
+                            <td class="px-6 py-4 text-center font-semibold">≥ 8.5</td>
+                            <td class="px-6 py-4 text-gray-700">Najwyższa efektywność - nasze urządzenia</td>
+                        </tr>
+                        <tr class="hover:bg-green-50 transition">
+                            <td class="px-6 py-4 font-bold text-green-600">A++</td>
+                            <td class="px-6 py-4 text-center">4.6 - 5.1</td>
+                            <td class="px-6 py-4 text-center">6.1 - 8.5</td>
+                            <td class="px-6 py-4 text-gray-700">Bardzo wysoka efektywność</td>
+                        </tr>
+                        <tr class="hover:bg-lime-50 transition">
+                            <td class="px-6 py-4 font-bold text-lime-600">A+</td>
+                            <td class="px-6 py-4 text-center">4.0 - 4.6</td>
+                            <td class="px-6 py-4 text-center">5.6 - 6.1</td>
+                            <td class="px-6 py-4 text-gray-700">Wysoka efektywność</td>
+                        </tr>
+                        <tr class="hover:bg-yellow-50 transition">
+                            <td class="px-6 py-4 font-bold text-yellow-600">A</td>
+                            <td class="px-6 py-4 text-center">3.4 - 4.0</td>
+                            <td class="px-6 py-4 text-center">5.1 - 5.6</td>
+                            <td class="px-6 py-4 text-gray-700">Dobra efektywność</td>
+                        </tr>
+                        <tr class="hover:bg-orange-50 transition">
+                            <td class="px-6 py-4 font-bold text-orange-600">B</td>
+                            <td class="px-6 py-4 text-center">3.1 - 3.4</td>
+                            <td class="px-6 py-4 text-center">4.6 - 5.1</td>
+                            <td class="px-6 py-4 text-gray-700">Średnia efektywność</td>
+                        </tr>
+                        <tr class="hover:bg-red-50 transition">
+                            <td class="px-6 py-4 font-bold text-red-600">C, D</td>
+                            <td class="px-6 py-4 text-center">< 3.1</td>
+                            <td class="px-6 py-4 text-center">< 4.6</td>
+                            <td class="px-6 py-4 text-gray-700">Niska efektywność - niezalecane</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-12 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8">
+                <h3 class="text-2xl font-bold mb-4 text-center">💡 Co to oznacza w praktyce?</h3>
+                <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <div class="bg-white rounded-xl p-6">
+                        <div class="text-4xl mb-2">❄️</div>
+                        <h4 class="font-bold mb-2">SEER (Chłodzenie)</h4>
+                        <p class="text-gray-600 text-sm">
+                            SEER 8.5 oznacza, że z 1 kW energii elektrycznej otrzymujesz 8.5 kW mocy chłodniczej. 
+                            Im wyższy SEER, tym niższe rachunki latem.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6">
+                        <div class="text-4xl mb-2">🔥</div>
+                        <h4 class="font-bold mb-2">SCOP (Ogrzewanie)</h4>
+                        <p class="text-gray-600 text-sm">
+                            SCOP 5.1 oznacza, że z 1 kW energii elektrycznej otrzymujesz 5.1 kW mocy grzewczej. 
+                            5x taniej niż grzejniki elektryczne!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Timeline -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-gradient-azure">Instalacja</span> w 1 Dzień
+                </h2>
+                <p class="text-xl text-gray-600">Od zamówienia do korzystania</p>
+            </div>
+
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 gradient-azure rounded-full hidden md:block"></div>
+                
+                <div class="space-y-12">
+                    <!-- Step 1 -->
+                    <div class="flex items-center md:justify-start">
+                        <div class="md:w-1/2 md:pr-12 md:text-right">
+                            <div class="bg-white rounded-2xl p-6 shadow-xl hover-lift">
+                                <div class="text-4xl mb-3">📞</div>
+                                <h3 class="text-2xl font-bold mb-2">1. Konsultacja</h3>
+                                <p class="text-gray-600">
+                                    Bezpłatna wizyta i dobór urządzenia. Omówimy Twoje potrzeby i przygotujemy ofertę.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block w-8 h-8 gradient-azure rounded-full border-4 border-white relative z-10"></div>
+                        <div class="md:w-1/2"></div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex items-center md:justify-end">
+                        <div class="md:w-1/2"></div>
+                        <div class="hidden md:block w-8 h-8 gradient-azure rounded-full border-4 border-white relative z-10"></div>
+                        <div class="md:w-1/2 md:pl-12">
+                            <div class="bg-white rounded-2xl p-6 shadow-xl hover-lift">
+                                <div class="text-4xl mb-3">📝</div>
+                                <h3 class="text-2xl font-bold mb-2">2. Zamówienie</h3>
+                                <p class="text-gray-600">
+                                    Podpisanie umowy i rezerwacja terminu montażu. Sprzęt zamówiony u oficjalnego dystrybutora.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex items-center md:justify-start">
+                        <div class="md:w-1/2 md:pr-12 md:text-right">
+                            <div class="bg-white rounded-2xl p-6 shadow-xl hover-lift">
+                                <div class="text-4xl mb-3">🔧</div>
+                                <h3 class="text-2xl font-bold mb-2">3. Montaż</h3>
+                                <p class="text-gray-600">
+                                    Profesjonalny montaż przez certyfikowanych instalatorów. Czas montażu: 4-8 godzin dla systemu Split.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block w-8 h-8 gradient-azure rounded-full border-4 border-white relative z-10"></div>
+                        <div class="md:w-1/2"></div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex items-center md:justify-end">
+                        <div class="md:w-1/2"></div>
+                        <div class="hidden md:block w-8 h-8 gradient-azure rounded-full border-4 border-white relative z-10"></div>
+                        <div class="md:w-1/2 md:pl-12">
+                            <div class="bg-white rounded-2xl p-6 shadow-xl hover-lift">
+                                <div class="text-4xl mb-3">✅</div>
+                                <h3 class="text-2xl font-bold mb-2">4. Odbiór</h3>
+                                <p class="text-gray-600">
+                                    Uruchomienie, testy i instruktaż obsługi. Od razu możesz cieszyć się komfortem!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-azure text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Zadbaj o Komfort Swojego Domu
+            </h2>
+            <p class="text-xl text-cyan-50 mb-8">
+                Bezpłatna konsultacja i wycena. Montaż w 1 dzień. 10 lat gwarancji.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="kontakt.html" class="bg-white text-cyan-600 px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition text-lg">
+                    <i class="fas fa-envelope mr-2"></i> Zamów wycenę
+                </a>
+                <a href="tel:+48123456789" class="bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-full font-semibold hover:bg-white/30 transition text-lg border-2 border-white">
+                    <i class="fas fa-phone mr-2"></i> +48 123 456 789
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="text-gradient-azure">Skontaktuj</span> Się z Nami
+                </h2>
+                <p class="text-gray-600">Dobierzemy idealny system klimatyzacji dla Ciebie</p>
+            </div>
+
+            <form class="bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl p-8 shadow-xl">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <input type="text" placeholder="Imię i nazwisko" class="px-6 py-4 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition">
+                    <input type="email" placeholder="Email" class="px-6 py-4 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition">
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <input type="tel" placeholder="Telefon" class="px-6 py-4 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition">
+                    <select class="px-6 py-4 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition">
+                        <option>Wybierz system</option>
+                        <option>Split 2.5 kW - 3,500 zł</option>
+                        <option>Multi-Split 2x3.5 kW - 8,000 zł</option>
+                        <option>VRF/VRV - od 20,000 zł</option>
+                        <option>Nie wiem / doradźcie</option>
+                    </select>
+                </div>
+                <input type="text" placeholder="Powierzchnia pomieszczenia (m²)" class="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition mb-6">
+                <textarea placeholder="Wiadomość (opcjonalnie)" rows="4" class="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition mb-6"></textarea>
+                <button type="submit" class="w-full gradient-azure text-white py-4 rounded-xl font-semibold hover:shadow-xl transition text-lg">
+                    <i class="fas fa-paper-plane mr-2"></i> Wyślij zapytanie
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-azure-reverse text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-solar-panel text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">Azure Solar</span>
+                    </div>
+                    <p class="text-cyan-100">Twój partner w odnawialnych źródłach energii</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Usługi</h4>
+                    <ul class="space-y-2 text-cyan-100">
+                        <li><a href="fotowoltaika.html" class="hover:text-white transition">Fotowoltaika</a></li>
+                        <li><a href="pompy-ciepla.html" class="hover:text-white transition">Pompy Ciepła</a></li>
+                        <li><a href="magazyny-energii.html" class="hover:text-white transition">Magazyny Energii</a></li>
+                        <li><a href="klimatyzacja.html" class="hover:text-white transition">Klimatyzacja</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Firma</h4>
+                    <ul class="space-y-2 text-cyan-100">
+                        <li><a href="o-nas.html" class="hover:text-white transition">O nas</a></li>
+                        <li><a href="realizacje.html" class="hover:text-white transition">Realizacje</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="kontakt.html" class="hover:text-white transition">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-cyan-100">
+                        <li><i class="fas fa-phone mr-2"></i> +48 123 456 789</li>
+                        <li><i class="fas fa-envelope mr-2"></i> kontakt@azure-solar.pl</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Warszawa, Polska</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-8 text-center text-cyan-100">
+                <p>&copy; 2024 Azure Solar. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn?.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

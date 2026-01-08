@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administracyjny | Azure Solar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --azure-blue: #0EA5E9;
+            --azure-cyan: #06B6D4;
+            --azure-green: #10B981;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .gradient-azure { background: linear-gradient(135deg, var(--azure-blue) 0%, var(--azure-green) 100%); }
+        .sidebar { position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+        .funnel-step { clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); }
+        @media (max-width: 768px) {
+            .sidebar { position: static; height: auto; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="sidebar w-64 gradient-azure text-white flex-shrink-0">
+            <div class="p-6">
+                <div class="flex items-center space-x-3 mb-8">
+                    <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <span class="text-xl font-bold">Azure Solar</span>
+                </div>
+
+                <nav class="space-y-2">
+                    <a href="#dashboard" class="flex items-center space-x-3 px-4 py-3 rounded-xl bg-white/20 backdrop-blur-md font-semibold">
+                        <i class="fas fa-chart-pie w-5"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#leady" class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-white/10 transition">
+                        <i class="fas fa-user-plus w-5"></i>
+                        <span>Leady</span>
+                    </a>
+                    <a href="#projekty" class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-white/10 transition">
+                        <i class="fas fa-tasks w-5"></i>
+                        <span>Projekty</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-white/10 transition">
+                        <i class="fas fa-users w-5"></i>
+                        <span>Klienci</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-white/10 transition">
+                        <i class="fas fa-calendar w-5"></i>
+                        <span>Kalendarz</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-white/10 transition">
+                        <i class="fas fa-file-invoice w-5"></i>
+                        <span>Faktury</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-white/10 transition">
+                        <i class="fas fa-warehouse w-5"></i>
+                        <span>Magazyn</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-white/10 transition">
+                        <i class="fas fa-chart-bar w-5"></i>
+                        <span>Raporty</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-white/10 transition">
+                        <i class="fas fa-user-shield w-5"></i>
+                        <span>Użytkownicy</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-white/10 transition">
+                        <i class="fas fa-cog w-5"></i>
+                        <span>Ustawienia</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8 overflow-x-hidden">
+            
+            <!-- Dashboard Section -->
+            <section id="dashboard">
+                <header class="mb-8">
+                    <h1 class="text-3xl font-bold text-gray-800">Panel Administracyjny</h1>
+                    <p class="text-gray-600">Witaj! Oto Twoje statystyki</p>
+                </header>
+
+                <!-- KPI Cards -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 mb-8">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="text-sm text-gray-600">Nowe leady dziś</div>
+                            <i class="fas fa-user-plus text-cyan-500"></i>
+                        </div>
+                        <div class="text-3xl font-bold text-gray-800">12</div>
+                        <div class="text-xs text-emerald-600 font-semibold mt-1">↑ +25% vs wczoraj</div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="text-sm text-gray-600">Projekty w realizacji</div>
+                            <i class="fas fa-tasks text-orange-500"></i>
+                        </div>
+                        <div class="text-3xl font-bold text-gray-800">8</div>
+                        <div class="text-xs text-gray-500 mt-1">→ bez zmian</div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="text-sm text-gray-600">Przychód m-c</div>
+                            <i class="fas fa-coins text-yellow-500"></i>
+                        </div>
+                        <div class="text-3xl font-bold text-gray-800">250k</div>
+                        <div class="text-xs text-emerald-600 font-semibold mt-1">↑ +12% vs m-c</div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="text-sm text-gray-600">Zadowolenie</div>
+                            <i class="fas fa-smile text-emerald-500"></i>
+                        </div>
+                        <div class="text-3xl font-bold text-gray-800">98%</div>
+                        <div class="text-xs text-emerald-600 font-semibold mt-1">↑ +2%</div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="text-sm text-gray-600">Czas realizacji</div>
+                            <i class="fas fa-clock text-blue-500"></i>
+                        </div>
+                        <div class="text-3xl font-bold text-gray-800">14d</div>
+                        <div class="text-xs text-red-600 font-semibold mt-1">↓ -2 dni</div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="text-sm text-gray-600">Konwersja</div>
+                            <i class="fas fa-chart-line text-purple-500"></i>
+                        </div>
+                        <div class="text-3xl font-bold text-gray-800">35%</div>
+                        <div class="text-xs text-emerald-600 font-semibold mt-1">↑ +5%</div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                    <!-- Sales Chart -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <h2 class="text-2xl font-bold mb-6">Sprzedaż 2024 (tys. zł)</h2>
+                        <canvas id="salesChart" height="100"></canvas>
+                    </div>
+
+                    <!-- Funnel -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <h2 class="text-2xl font-bold mb-6">Lejek Sprzedażowy</h2>
+                        <div class="space-y-3">
+                            <div class="funnel-step bg-gradient-to-r from-cyan-400 to-blue-500 text-white p-4 text-center font-bold">
+                                Lead → 50
+                            </div>
+                            <div class="funnel-step bg-gradient-to-r from-blue-400 to-indigo-500 text-white p-4 text-center font-bold mx-4">
+                                Oferta → 30
+                            </div>
+                            <div class="funnel-step bg-gradient-to-r from-indigo-400 to-purple-500 text-white p-4 text-center font-bold mx-8">
+                                Umowa → 20
+                            </div>
+                            <div class="funnel-step bg-gradient-to-r from-purple-400 to-pink-500 text-white p-4 text-center font-bold mx-12">
+                                Realizacja → 15
+                            </div>
+                        </div>
+                        <div class="mt-6 grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-gray-800">60%</div>
+                                <div class="text-sm text-gray-600">Lead → Oferta</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-gray-800">75%</div>
+                                <div class="text-sm text-gray-600">Umowa → Realizacja</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Latest Leads Table -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg mb-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold">Ostatnie Leady</h2>
+                        <button class="gradient-azure text-white px-6 py-3 rounded-xl font-semibold hover:shadow-xl transition">
+                            <i class="fas fa-plus mr-2"></i>Dodaj lead
+                        </button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-4 py-3 text-left text-sm font-semibold">Imię</th>
+                                    <th class="px-4 py-3 text-left text-sm font-semibold">Telefon</th>
+                                    <th class="px-4 py-3 text-left text-sm font-semibold">Usługa</th>
+                                    <th class="px-4 py-3 text-left text-sm font-semibold">Źródło</th>
+                                    <th class="px-4 py-3 text-left text-sm font-semibold">Status</th>
+                                    <th class="px-4 py-3 text-left text-sm font-semibold">Akcje</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-4 font-semibold">Jan Kowalski</td>
+                                    <td class="px-4 py-4 text-sm">+48 123 456 789</td>
+                                    <td class="px-4 py-4 text-sm">PV 10kW</td>
+                                    <td class="px-4 py-4 text-sm">Web</td>
+                                    <td class="px-4 py-4">
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">
+                                            Nowy
+                                        </span>
+                                    </td>
+                                    <td class="px-4 py-4 text-sm space-x-2">
+                                        <button class="text-cyan-600 hover:text-cyan-700">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-700">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-4 font-semibold">Anna Nowak</td>
+                                    <td class="px-4 py-4 text-sm">+48 987 654 321</td>
+                                    <td class="px-4 py-4 text-sm">Pompa 8kW</td>
+                                    <td class="px-4 py-4 text-sm">Facebook</td>
+                                    <td class="px-4 py-4">
+                                        <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">
+                                            Kontakt
+                                        </span>
+                                    </td>
+                                    <td class="px-4 py-4 text-sm space-x-2">
+                                        <button class="text-cyan-600 hover:text-cyan-700">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-700">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-4 py-4 font-semibold">Piotr Wiśniewski</td>
+                                    <td class="px-4 py-4 text-sm">+48 555 123 456</td>
+                                    <td class="px-4 py-4 text-sm">PV 15kW + Magazyn</td>
+                                    <td class="px-4 py-4 text-sm">Polecenie</td>
+                                    <td class="px-4 py-4">
+                                        <span class="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold">
+                                            Oferta wysłana
+                                        </span>
+                                    </td>
+                                    <td class="px-4 py-4 text-sm space-x-2">
+                                        <button class="text-cyan-600 hover:text-cyan-700">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-700">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Calendar & Map -->
+                <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                    <!-- Calendar -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <h2 class="text-2xl font-bold mb-6">Kalendarz - Styczeń 2024</h2>
+                        <div class="grid grid-cols-7 gap-2 text-center">
+                            <div class="font-bold text-gray-600 text-sm">Pn</div>
+                            <div class="font-bold text-gray-600 text-sm">Wt</div>
+                            <div class="font-bold text-gray-600 text-sm">Śr</div>
+                            <div class="font-bold text-gray-600 text-sm">Cz</div>
+                            <div class="font-bold text-gray-600 text-sm">Pt</div>
+                            <div class="font-bold text-gray-600 text-sm">Sb</div>
+                            <div class="font-bold text-gray-600 text-sm">Nd</div>
+                            <div class="p-2 text-gray-400">1</div>
+                            <div class="p-2 text-gray-400">2</div>
+                            <div class="p-2 text-gray-400">3</div>
+                            <div class="p-2 text-gray-400">4</div>
+                            <div class="p-2 text-gray-400">5</div>
+                            <div class="p-2 text-gray-400">6</div>
+                            <div class="p-2 text-gray-400">7</div>
+                            <div class="p-2 bg-cyan-100 rounded-lg font-semibold">8</div>
+                            <div class="p-2">9</div>
+                            <div class="p-2">10</div>
+                            <div class="p-2 bg-emerald-100 rounded-lg font-semibold">11</div>
+                            <div class="p-2">12</div>
+                            <div class="p-2">13</div>
+                            <div class="p-2">14</div>
+                            <div class="p-2 bg-orange-100 rounded-lg font-semibold">15</div>
+                            <div class="p-2">16</div>
+                            <div class="p-2">17</div>
+                            <div class="p-2">18</div>
+                            <div class="p-2">19</div>
+                            <div class="p-2">20</div>
+                            <div class="p-2">21</div>
+                            <div class="p-2 bg-purple-100 rounded-lg font-semibold">22</div>
+                            <div class="p-2">23</div>
+                            <div class="p-2">24</div>
+                            <div class="p-2">25</div>
+                            <div class="p-2">26</div>
+                            <div class="p-2">27</div>
+                            <div class="p-2">28</div>
+                            <div class="p-2">29</div>
+                            <div class="p-2">30</div>
+                            <div class="p-2">31</div>
+                        </div>
+                        <div class="mt-6 space-y-2">
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-cyan-100 rounded mr-2"></div>
+                                <span class="text-sm">Wizyta u klienta</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-emerald-100 rounded mr-2"></div>
+                                <span class="text-sm">Montaż</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-orange-100 rounded mr-2"></div>
+                                <span class="text-sm">Przegląd</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Placeholder -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <h2 class="text-2xl font-bold mb-6">Mapa Projektów</h2>
+                        <div class="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl h-96 flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-map-marked-alt text-6xl text-gray-400 mb-4"></i>
+                                <p class="text-gray-600 font-semibold">Mapa Polski z lokalizacjami projektów</p>
+                                <p class="text-sm text-gray-500 mt-2">15 aktywnych projektów w 8 województwach</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leady Section -->
+            <section id="leady" class="hidden">
+                <div class="bg-white rounded-2xl p-6 shadow-lg mb-8">
+                    <h2 class="text-3xl font-bold mb-6">Zarządzanie Leadami</h2>
+                    
+                    <!-- Filters -->
+                    <div class="grid md:grid-cols-4 gap-4 mb-6">
+                        <select class="px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-cyan-500 focus:outline-none">
+                            <option>Status: Wszystkie</option>
+                            <option>Nowy</option>
+                            <option>Kontakt</option>
+                            <option>Oferta wysłana</option>
+                            <option>Negocjacje</option>
+                            <option>Wygrany</option>
+                            <option>Przegrany</option>
+                        </select>
+                        <select class="px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-cyan-500 focus:outline-none">
+                            <option>Źródło: Wszystkie</option>
+                            <option>Web</option>
+                            <option>Facebook</option>
+                            <option>Google Ads</option>
+                            <option>Polecenie</option>
+                        </select>
+                        <select class="px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-cyan-500 focus:outline-none">
+                            <option>Usługa: Wszystkie</option>
+                            <option>Fotowoltaika</option>
+                            <option>Pompa ciepła</option>
+                            <option>Magazyn energii</option>
+                            <option>Klimatyzacja</option>
+                        </select>
+                        <button class="gradient-azure text-white px-6 py-3 rounded-xl font-semibold hover:shadow-xl transition">
+                            <i class="fas fa-file-export mr-2"></i>Eksportuj CSV
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projekty Section (Kanban) -->
+            <section id="projekty">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold mb-2">Projekty - Tablica Kanban</h2>
+                    <p class="text-gray-600">Przeciągnij karty aby zmienić status projektu</p>
+                </div>
+
+                <div class="grid lg:grid-cols-4 gap-6">
+                    <!-- Column 1: Ofertowanie -->
+                    <div class="bg-white rounded-2xl p-4 shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-lg">Ofertowanie</h3>
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-bold">3</span>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-4 hover:shadow-lg transition cursor-move">
+                                <div class="font-bold mb-2">Jan Kowalski</div>
+                                <div class="text-sm text-gray-600 mb-3">PV 10 kW</div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">Wartość: 38k zł</span>
+                                </div>
+                                <div class="flex items-center justify-between text-xs text-gray-500">
+                                    <span>08.01.2024</span>
+                                    <div class="w-6 h-6 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold">
+                                        AK
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-4 hover:shadow-lg transition cursor-move">
+                                <div class="font-bold mb-2">Anna Nowak</div>
+                                <div class="text-sm text-gray-600 mb-3">Pompa 8 kW</div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">Wartość: 42k zł</span>
+                                </div>
+                                <div class="flex items-center justify-between text-xs text-gray-500">
+                                    <span>07.01.2024</span>
+                                    <div class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold">
+                                        MW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-4 hover:shadow-lg transition cursor-move">
+                                <div class="font-bold mb-2">Firma ABC Sp. z o.o.</div>
+                                <div class="text-sm text-gray-600 mb-3">PV 50 kW</div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">Wartość: 180k zł</span>
+                                </div>
+                                <div class="flex items-center justify-between text-xs text-gray-500">
+                                    <span>06.01.2024</span>
+                                    <div class="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                                        PK
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Zatwierdzono -->
+                    <div class="bg-white rounded-2xl p-4 shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-lg">Zatwierdzono</h3>
+                            <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm font-bold">2</span>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-4 hover:shadow-lg transition cursor-move">
+                                <div class="font-bold mb-2">Piotr Wiśniewski</div>
+                                <div class="text-sm text-gray-600 mb-3">PV 15 kW + Magazyn</div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded">Wartość: 66k zł</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                                    <div class="bg-emerald-500 h-2 rounded-full" style="width: 20%"></div>
+                                </div>
+                                <div class="flex items-center justify-between text-xs text-gray-500">
+                                    <span>05.01.2024</span>
+                                    <div class="w-6 h-6 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold">
+                                        AK
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-4 hover:shadow-lg transition cursor-move">
+                                <div class="font-bold mb-2">Maria Lewandowska</div>
+                                <div class="text-sm text-gray-600 mb-3">Pompa 10 kW</div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded">Wartość: 42k zł</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                                    <div class="bg-emerald-500 h-2 rounded-full" style="width: 35%"></div>
+                                </div>
+                                <div class="flex items-center justify-between text-xs text-gray-500">
+                                    <span>03.01.2024</span>
+                                    <div class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold">
+                                        MW
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: W realizacji -->
+                    <div class="bg-white rounded-2xl p-4 shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-lg">W realizacji</h3>
+                            <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-bold">5</span>
+                        </div>
+                        <div class="space-y-3 max-h-[600px] overflow-y-auto">
+                            <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-4 hover:shadow-lg transition cursor-move">
+                                <div class="font-bold mb-2">Tomasz Król</div>
+                                <div class="text-sm text-gray-600 mb-3">PV 12 kW</div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded">Wartość: 45k zł</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                                    <div class="bg-orange-500 h-2 rounded-full" style="width: 65%"></div>
+                                </div>
+                                <div class="flex items-center justify-between text-xs text-gray-500">
+                                    <span>28.12.2023</span>
+                                    <div class="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                                        PK
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-4 hover:shadow-lg transition cursor-move">
+                                <div class="font-bold mb-2">Ewa Mazur</div>
+                                <div class="text-sm text-gray-600 mb-3">Pompa 14 kW</div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded">Wartość: 58k zł</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                                    <div class="bg-orange-500 h-2 rounded-full" style="width: 80%"></div>
+                                </div>
+                                <div class="flex items-center justify-between text-xs text-gray-500">
+                                    <span>20.12.2023</span>
+                                    <div class="w-6 h-6 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold">
+                                        AK
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-4 hover:shadow-lg transition cursor-move">
+                                <div class="font-bold mb-2">Restauracja "Pod Słońcem"</div>
+                                <div class="text-sm text-gray-600 mb-3">Klimatyzacja Multi-Split</div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded">Wartość: 15k zł</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                                    <div class="bg-orange-500 h-2 rounded-full" style="width: 50%"></div>
+                                </div>
+                                <div class="flex items-center justify-between text-xs text-gray-500">
+                                    <span>15.12.2023</span>
+                                    <div class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold">
+                                        MW
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 4: Zakończone -->
+                    <div class="bg-white rounded-2xl p-4 shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-lg">Zakończone</h3>
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-bold">15</span>
+                        </div>
+                        <div class="space-y-3 max-h-[600px] overflow-y-auto">
+                            <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 hover:shadow-lg transition">
+                                <div class="font-bold mb-2">Krzysztof Nowicki</div>
+                                <div class="text-sm text-gray-600 mb-3">PV 10 kW</div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">Wartość: 38k zł</span>
+                                </div>
+                                <div class="flex items-center justify-between text-xs text-gray-500">
+                                    <span><i class="fas fa-check-circle text-emerald-500 mr-1"></i>10.12.2023</span>
+                                    <div class="w-6 h-6 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold">
+                                        AK
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 hover:shadow-lg transition">
+                                <div class="font-bold mb-2">Agnieszka Wójcik</div>
+                                <div class="text-sm text-gray-600 mb-3">Pompa 10 kW</div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">Wartość: 42k zł</span>
+                                </div>
+                                <div class="flex items-center justify-between text-xs text-gray-500">
+                                    <span><i class="fas fa-check-circle text-emerald-500 mr-1"></i>05.12.2023</span>
+                                    <div class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold">
+                                        MW
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        // Sales Chart
+        const ctx = document.getElementById('salesChart').getContext('2d');
+        const salesChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze', 'Lip', 'Sie', 'Wrz', 'Paź', 'Lis', 'Gru'],
+                datasets: [{
+                    label: 'Sprzedaż (tys. zł)',
+                    data: [180, 220, 250, 210, 280, 300, 320, 290, 310, 340, 360, 250],
+                    backgroundColor: 'rgba(14, 165, 233, 0.8)',
+                    borderColor: '#0EA5E9',
+                    borderWidth: 2,
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + 'k';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Navigation
+        document.querySelectorAll('aside a[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    document.querySelectorAll('main > section').forEach(s => s.classList.add('hidden'));
+                    target.classList.remove('hidden');
+                    document.querySelectorAll('aside a').forEach(a => a.classList.remove('bg-white/20', 'backdrop-blur-md', 'font-semibold'));
+                    link.classList.add('bg-white/20', 'backdrop-blur-md', 'font-semibold');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

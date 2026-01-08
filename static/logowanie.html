@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie | Azure Solar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azure-blue: #0EA5E9;
+            --azure-green: #10B981;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2 { font-family: 'Poppins', sans-serif; }
+        .gradient-azure { background: linear-gradient(135deg, var(--azure-blue) 0%, var(--azure-green) 100%); }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-blue-50 min-h-screen flex flex-col">
+
+    <!-- Simple Header -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-10 h-10 gradient-azure rounded-lg flex items-center justify-center">
+                    <i class="fas fa-solar-panel text-white"></i>
+                </div>
+                <span class="text-xl font-bold bg-gradient-to-r from-sky-500 to-emerald-500 bg-clip-text text-transparent">Azure Solar</span>
+            </a>
+            <a href="index.html" class="text-gray-600 hover:text-cyan-600 transition font-medium">
+                <i class="fas fa-arrow-left mr-2"></i> Powrót
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex items-center justify-center px-4 py-12">
+        <div class="w-full max-w-md">
+            <!-- Login Card -->
+            <div class="bg-white rounded-3xl shadow-2xl p-8">
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl font-bold mb-2">Logowanie</h1>
+                    <p class="text-gray-600">Zaloguj się do swojego konta</p>
+                </div>
+
+                <form class="space-y-6">
+                    <!-- Email -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input 
+                            type="email" 
+                            placeholder="twoj@email.com"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition"
+                            required
+                        >
+                    </div>
+
+                    <!-- Password -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Hasło</label>
+                        <input 
+                            type="password" 
+                            placeholder="••••••••"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition"
+                            required
+                        >
+                    </div>
+
+                    <!-- Remember & Forgot -->
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="w-4 h-4 text-cyan-600 border-gray-300 rounded focus:ring-cyan-500">
+                            <span class="ml-2 text-sm text-gray-600">Zapamiętaj mnie</span>
+                        </label>
+                        <a href="#" class="text-sm text-cyan-600 hover:text-cyan-700 font-medium">
+                            Zapomniałeś hasła?
+                        </a>
+                    </div>
+
+                    <!-- Login Button -->
+                    <button 
+                        type="submit"
+                        class="w-full gradient-azure text-white py-3 rounded-xl font-semibold hover:shadow-xl transition"
+                    >
+                        <i class="fas fa-sign-in-alt mr-2"></i> Zaloguj się
+                    </button>
+                </form>
+
+                <!-- Separator -->
+                <div class="relative my-6">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white text-gray-500">lub</span>
+                    </div>
+                </div>
+
+                <!-- Social Login -->
+                <div class="space-y-3">
+                    <button class="w-full flex items-center justify-center px-4 py-3 border border-gray-300 rounded-xl hover:bg-gray-50 transition">
+                        <i class="fab fa-google text-red-500 mr-3 text-xl"></i>
+                        <span class="font-medium text-gray-700">Kontynuuj z Google</span>
+                    </button>
+                    <button class="w-full flex items-center justify-center px-4 py-3 border border-gray-300 rounded-xl hover:bg-gray-50 transition">
+                        <i class="fab fa-facebook text-blue-600 mr-3 text-xl"></i>
+                        <span class="font-medium text-gray-700">Kontynuuj z Facebook</span>
+                    </button>
+                </div>
+
+                <!-- Register Link -->
+                <div class="mt-6 text-center">
+                    <p class="text-gray-600">
+                        Nie masz konta? 
+                        <a href="#" class="text-cyan-600 hover:text-cyan-700 font-semibold">Zarejestruj się</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="bg-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600 text-sm">
+            &copy; 2024 Azure Solar. Wszystkie prawa zastrzeżone.
+        </div>
+    </footer>
+
+</body>
+</html>

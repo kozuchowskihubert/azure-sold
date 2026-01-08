@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realizacje • 500+ Zadowolonych Klientów | Azure Solar</title>
+    <meta name="description" content="Zobacz nasze realizacje fotowoltaiki, pomp ciepła i klimatyzacji. Ponad 500 zadowolonych klientów w całej Polsce.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azure-blue: #0EA5E9;
+            --azure-cyan: #06B6D4;
+            --azure-green: #10B981;
+            --azure-emerald: #059669;
+            --azure-teal: #14B8A6;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .gradient-azure { background: linear-gradient(135deg, var(--azure-blue) 0%, var(--azure-green) 100%); }
+        .gradient-azure-reverse { background: linear-gradient(135deg, var(--azure-green) 0%, var(--azure-blue) 100%); }
+        .gradient-teal { background: linear-gradient(135deg, var(--azure-teal) 0%, var(--azure-emerald) 100%); }
+        .text-gradient-azure { background: linear-gradient(135deg, var(--azure-blue), var(--azure-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(14, 165, 233, 0.2); }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .mobile-menu.active { max-height: 500px; }
+        .filter-btn { transition: all 0.3s ease; }
+        .filter-btn.active { background: linear-gradient(135deg, var(--azure-blue), var(--azure-green)); color: white; }
+        .project-card { display: block; }
+        .project-card.hidden { display: none; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-blue-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 gradient-azure rounded-xl flex items-center justify-center">
+                        <i class="fas fa-solar-panel text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-gradient-azure">Azure Solar</span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-cyan-600 transition font-medium">Strona główna</a>
+                    <div class="relative group">
+                        <button class="text-gray-600 hover:text-cyan-600 transition font-medium flex items-center">
+                            Usługi <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+                            <a href="fotowoltaika.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-sky-50 hover:to-cyan-50 transition">
+                                <i class="fas fa-solar-panel text-sky-500 mr-2"></i> Fotowoltaika
+                            </a>
+                            <a href="pompy-ciepla.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 transition">
+                                <i class="fas fa-fire text-orange-500 mr-2"></i> Pompy Ciepła
+                            </a>
+                            <a href="magazyny-energii.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 transition">
+                                <i class="fas fa-battery-full text-emerald-500 mr-2"></i> Magazyny Energii
+                            </a>
+                            <a href="klimatyzacja.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition rounded-b-xl">
+                                <i class="fas fa-snowflake text-blue-500 mr-2"></i> Klimatyzacja
+                            </a>
+                        </div>
+                    </div>
+                    <a href="realizacje.html" class="text-gray-600 hover:text-cyan-600 transition font-medium">Realizacje</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-cyan-600 transition font-medium">Blog</a>
+                    <a href="o-nas.html" class="text-gray-600 hover:text-cyan-600 transition font-medium">O nas</a>
+                    <a href="kontakt.html" class="gradient-azure text-white px-6 py-3 rounded-full hover:shadow-xl transition font-semibold">
+                        Kontakt
+                    </a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t">
+            <a href="index.html" class="block px-6 py-3 hover:bg-gray-50">Strona główna</a>
+            <a href="fotowoltaika.html" class="block px-6 py-3 hover:bg-gray-50">Fotowoltaika</a>
+            <a href="pompy-ciepla.html" class="block px-6 py-3 hover:bg-gray-50">Pompy Ciepła</a>
+            <a href="magazyny-energii.html" class="block px-6 py-3 hover:bg-gray-50">Magazyny Energii</a>
+            <a href="klimatyzacja.html" class="block px-6 py-3 hover:bg-gray-50">Klimatyzacja</a>
+            <a href="realizacje.html" class="block px-6 py-3 hover:bg-gray-50">Realizacje</a>
+            <a href="blog.html" class="block px-6 py-3 hover:bg-gray-50">Blog</a>
+            <a href="o-nas.html" class="block px-6 py-3 hover:bg-gray-50">O nas</a>
+            <a href="kontakt.html" class="block px-6 py-3 hover:bg-gray-50">Kontakt</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative gradient-azure text-white py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-64 h-64 bg-white rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl animate-float" style="animation-delay: 1s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <div class="inline-flex items-center bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full mb-6">
+                    <i class="fas fa-trophy text-2xl mr-3"></i>
+                    <span class="font-semibold">Nasze Realizacje • 500+ Zadowolonych Klientów</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                    Portfolio<br/>
+                    <span class="text-cyan-200">Naszych Projektów</span>
+                </h1>
+                <p class="text-xl text-cyan-50 max-w-3xl mx-auto">
+                    Zobacz projekty, które zrealizowaliśmy dla naszych klientów w całej Polsce. 
+                    Domy, firmy, gospodarstwa - każdy projekt dopasowany do indywidualnych potrzeb.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="py-12 bg-white sticky top-20 z-40 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="filter-btn active px-8 py-3 rounded-full border-2 border-gray-200 font-semibold hover:shadow-lg" data-filter="all">
+                    <i class="fas fa-th mr-2"></i> Wszystkie
+                </button>
+                <button class="filter-btn px-8 py-3 rounded-full border-2 border-gray-200 font-semibold hover:shadow-lg" data-filter="dom">
+                    <i class="fas fa-home mr-2"></i> Domy
+                </button>
+                <button class="filter-btn px-8 py-3 rounded-full border-2 border-gray-200 font-semibold hover:shadow-lg" data-filter="firma">
+                    <i class="fas fa-building mr-2"></i> Firmy
+                </button>
+                <button class="filter-btn px-8 py-3 rounded-full border-2 border-gray-200 font-semibold hover:shadow-lg" data-filter="gospodarstwo">
+                    <i class="fas fa-tractor mr-2"></i> Gospodarstwa
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-xl hover-lift" data-category="dom">
+                    <div class="h-64 gradient-azure relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-solar-panel text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-gray-800">
+                                <i class="fas fa-home mr-1"></i> Dom
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Dom Jednorodzinny</h3>
+                        <p class="text-cyan-600 font-semibold mb-4"><i class="fas fa-map-marker-alt mr-1"></i> Warszawa</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-bolt text-yellow-500 mr-2"></i>
+                                <span>Fotowoltaika 10 kW (25 paneli)</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-calendar text-blue-500 mr-2"></i>
+                                <span>Marzec 2023</span>
+                            </div>
+                            <div class="flex items-center text-emerald-600 font-semibold">
+                                <i class="fas fa-piggy-bank text-emerald-500 mr-2"></i>
+                                <span>Oszczędności: 6,000 zł/rok</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">5/5</span>
+                        </div>
+                        <button class="w-full gradient-azure text-white py-3 rounded-xl font-semibold hover:shadow-xl transition">
+                            Zobacz szczegóły
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-xl hover-lift" data-category="firma">
+                    <div class="h-64 bg-gradient-to-br from-orange-500 to-red-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-industry text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-gray-800">
+                                <i class="fas fa-building mr-1"></i> Firma
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Firma Produkcyjna</h3>
+                        <p class="text-cyan-600 font-semibold mb-4"><i class="fas fa-map-marker-alt mr-1"></i> Poznań</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-bolt text-yellow-500 mr-2"></i>
+                                <span>Fotowoltaika 50 kW (125 paneli)</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-calendar text-blue-500 mr-2"></i>
+                                <span>Kwiecień 2023</span>
+                            </div>
+                            <div class="flex items-center text-emerald-600 font-semibold">
+                                <i class="fas fa-piggy-bank text-emerald-500 mr-2"></i>
+                                <span>Oszczędności: 30,000 zł/rok</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">5/5</span>
+                        </div>
+                        <button class="w-full gradient-azure text-white py-3 rounded-xl font-semibold hover:shadow-xl transition">
+                            Zobacz szczegóły
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-xl hover-lift" data-category="gospodarstwo">
+                    <div class="h-64 gradient-teal relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-tractor text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-gray-800">
+                                <i class="fas fa-tractor mr-1"></i> Gospodarstwo
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Gospodarstwo Rolne</h3>
+                        <p class="text-cyan-600 font-semibold mb-4"><i class="fas fa-map-marker-alt mr-1"></i> Mazury</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-bolt text-yellow-500 mr-2"></i>
+                                <span>PV 15 kW + Pompa 12 kW</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-calendar text-blue-500 mr-2"></i>
+                                <span>Maj 2023</span>
+                            </div>
+                            <div class="flex items-center text-emerald-600 font-semibold">
+                                <i class="fas fa-piggy-bank text-emerald-500 mr-2"></i>
+                                <span>Oszczędności: 12,000 zł/rok</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">5/5</span>
+                        </div>
+                        <button class="w-full gradient-azure text-white py-3 rounded-xl font-semibold hover:shadow-xl transition">
+                            Zobacz szczegóły
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-xl hover-lift" data-category="dom">
+                    <div class="h-64 bg-gradient-to-br from-purple-500 to-pink-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-home text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-gray-800">
+                                <i class="fas fa-home mr-1"></i> Dom
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Dom Pasywny</h3>
+                        <p class="text-cyan-600 font-semibold mb-4"><i class="fas fa-map-marker-alt mr-1"></i> Kraków</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-bolt text-yellow-500 mr-2"></i>
+                                <span>PV 8 kW + Bateria 10 kWh</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-calendar text-blue-500 mr-2"></i>
+                                <span>Czerwiec 2023</span>
+                            </div>
+                            <div class="flex items-center text-emerald-600 font-semibold">
+                                <i class="fas fa-piggy-bank text-emerald-500 mr-2"></i>
+                                <span>Oszczędności: 5,500 zł/rok</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">5/5</span>
+                        </div>
+                        <button class="w-full gradient-azure text-white py-3 rounded-xl font-semibold hover:shadow-xl transition">
+                            Zobacz szczegóły
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-xl hover-lift" data-category="firma">
+                    <div class="h-64 bg-gradient-to-br from-blue-500 to-indigo-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-snowflake text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-gray-800">
+                                <i class="fas fa-building mr-1"></i> Firma
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Restauracja</h3>
+                        <p class="text-cyan-600 font-semibold mb-4"><i class="fas fa-map-marker-alt mr-1"></i> Gdańsk</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-snowflake text-blue-500 mr-2"></i>
+                                <span>Multi-split 4x klimatyzacja</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-calendar text-blue-500 mr-2"></i>
+                                <span>Lipiec 2023</span>
+                            </div>
+                            <div class="flex items-center text-emerald-600 font-semibold">
+                                <i class="fas fa-piggy-bank text-emerald-500 mr-2"></i>
+                                <span>Komfort dla gości</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">5/5</span>
+                        </div>
+                        <button class="w-full gradient-azure text-white py-3 rounded-xl font-semibold hover:shadow-xl transition">
+                            Zobacz szczegóły
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-xl hover-lift" data-category="firma">
+                    <div class="h-64 bg-gradient-to-br from-yellow-500 to-orange-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-building text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-gray-800">
+                                <i class="fas fa-building mr-1"></i> Firma
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Biurowiec</h3>
+                        <p class="text-cyan-600 font-semibold mb-4"><i class="fas fa-map-marker-alt mr-1"></i> Wrocław</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-bolt text-yellow-500 mr-2"></i>
+                                <span>Fotowoltaika 100 kW (250 paneli)</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-calendar text-blue-500 mr-2"></i>
+                                <span>Sierpień 2023</span>
+                            </div>
+                            <div class="flex items-center text-emerald-600 font-semibold">
+                                <i class="fas fa-piggy-bank text-emerald-500 mr-2"></i>
+                                <span>Oszczędności: 60,000 zł/rok</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">5/5</span>
+                        </div>
+                        <button class="w-full gradient-azure text-white py-3 rounded-xl font-semibold hover:shadow-xl transition">
+                            Zobacz szczegóły
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-xl hover-lift" data-category="dom">
+                    <div class="h-64 gradient-azure-reverse relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-home text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-gray-800">
+                                <i class="fas fa-home mr-1"></i> Dom
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Villa</h3>
+                        <p class="text-cyan-600 font-semibold mb-4"><i class="fas fa-map-marker-alt mr-1"></i> Sopot</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-fire text-orange-500 mr-2"></i>
+                                <span>Pompa gruntowa + PV 12 kW</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-calendar text-blue-500 mr-2"></i>
+                                <span>Wrzesień 2023</span>
+                            </div>
+                            <div class="flex items-center text-emerald-600 font-semibold">
+                                <i class="fas fa-piggy-bank text-emerald-500 mr-2"></i>
+                                <span>Oszczędności: 10,000 zł/rok</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">5/5</span>
+                        </div>
+                        <button class="w-full gradient-azure text-white py-3 rounded-xl font-semibold hover:shadow-xl transition">
+                            Zobacz szczegóły
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-xl hover-lift" data-category="firma">
+                    <div class="h-64 bg-gradient-to-br from-indigo-500 to-purple-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-warehouse text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-gray-800">
+                                <i class="fas fa-building mr-1"></i> Firma
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Magazyn</h3>
+                        <p class="text-cyan-600 font-semibold mb-4"><i class="fas fa-map-marker-alt mr-1"></i> Łódź</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-snowflake text-blue-500 mr-2"></i>
+                                <span>VRF System 30 kW</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-calendar text-blue-500 mr-2"></i>
+                                <span>Październik 2023</span>
+                            </div>
+                            <div class="flex items-center text-emerald-600 font-semibold">
+                                <i class="fas fa-piggy-bank text-emerald-500 mr-2"></i>
+                                <span>Komfort pracowników</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">5/5</span>
+                        </div>
+                        <button class="w-full gradient-azure text-white py-3 rounded-xl font-semibold hover:shadow-xl transition">
+                            Zobacz szczegóły
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-xl hover-lift" data-category="dom">
+                    <div class="h-64 bg-gradient-to-br from-green-500 to-emerald-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-battery-full text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-gray-800">
+                                <i class="fas fa-home mr-1"></i> Dom
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Dom</h3>
+                        <p class="text-cyan-600 font-semibold mb-4"><i class="fas fa-map-marker-alt mr-1"></i> Katowice</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-bolt text-yellow-500 mr-2"></i>
+                                <span>PV 6 kW + Bateria 5 kWh</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-calendar text-blue-500 mr-2"></i>
+                                <span>Listopad 2023</span>
+                            </div>
+                            <div class="flex items-center text-emerald-600 font-semibold">
+                                <i class="fas fa-piggy-bank text-emerald-500 mr-2"></i>
+                                <span>Oszczędności: 4,200 zł/rok</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">5/5</span>
+                        </div>
+                        <button class="w-full gradient-azure text-white py-3 rounded-xl font-semibold hover:shadow-xl transition">
+                            Zobacz szczegóły
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 10 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-xl hover-lift" data-category="firma">
+                    <div class="h-64 bg-gradient-to-br from-red-500 to-pink-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-fire text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-gray-800">
+                                <i class="fas fa-building mr-1"></i> Firma
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Pensjonat</h3>
+                        <p class="text-cyan-600 font-semibold mb-4"><i class="fas fa-map-marker-alt mr-1"></i> Zakopane</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-fire text-orange-500 mr-2"></i>
+                                <span>Pompa ciepła 18 kW</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-calendar text-blue-500 mr-2"></i>
+                                <span>Grudzień 2023</span>
+                            </div>
+                            <div class="flex items-center text-emerald-600 font-semibold">
+                                <i class="fas fa-piggy-bank text-emerald-500 mr-2"></i>
+                                <span>Oszczędności: 18,000 zł/rok</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">5/5</span>
+                        </div>
+                        <button class="w-full gradient-azure text-white py-3 rounded-xl font-semibold hover:shadow-xl transition">
+                            Zobacz szczegóły
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 11 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-xl hover-lift" data-category="firma">
+                    <div class="h-64 bg-gradient-to-br from-cyan-500 to-blue-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-store text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-gray-800">
+                                <i class="fas fa-building mr-1"></i> Firma
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Sklep</h3>
+                        <p class="text-cyan-600 font-semibold mb-4"><i class="fas fa-map-marker-alt mr-1"></i> Lublin</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-bolt text-yellow-500 mr-2"></i>
+                                <span>Fotowoltaika 25 kW (62 panele)</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-calendar text-blue-500 mr-2"></i>
+                                <span>Styczeń 2024</span>
+                            </div>
+                            <div class="flex items-center text-emerald-600 font-semibold">
+                                <i class="fas fa-piggy-bank text-emerald-500 mr-2"></i>
+                                <span>Oszczędności: 15,000 zł/rok</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">5/5</span>
+                        </div>
+                        <button class="w-full gradient-azure text-white py-3 rounded-xl font-semibold hover:shadow-xl transition">
+                            Zobacz szczegóły
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 12 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-xl hover-lift" data-category="dom">
+                    <div class="h-64 bg-gradient-to-br from-teal-500 to-emerald-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-home text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-gray-800">
+                                <i class="fas fa-home mr-1"></i> Dom
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Dom</h3>
+                        <p class="text-cyan-600 font-semibold mb-4"><i class="fas fa-map-marker-alt mr-1"></i> Gdynia</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-bolt text-yellow-500 mr-2"></i>
+                                <span>PV 10 kW + Klimatyzacja</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-calendar text-blue-500 mr-2"></i>
+                                <span>Luty 2024</span>
+                            </div>
+                            <div class="flex items-center text-emerald-600 font-semibold">
+                                <i class="fas fa-piggy-bank text-emerald-500 mr-2"></i>
+                                <span>Oszczędności: 6,500 zł/rok</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">5/5</span>
+                        </div>
+                        <button class="w-full gradient-azure text-white py-3 rounded-xl font-semibold hover:shadow-xl transition">
+                            Zobacz szczegóły
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-gradient-azure">Opinie</span> Klientów
+                </h2>
+                <p class="text-xl text-gray-600">Co mówią o nas nasi klienci</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 hover-lift">
+                    <div class="flex space-x-1 mb-4">
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "Profesjonalna obsługa od początku do końca. Instalacja fotowoltaiki przebiegła sprawnie, 
+                        a zespół był bardzo pomocny. Rachunki za prąd spadły o 80%!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 gradient-azure rounded-full flex items-center justify-center text-white font-bold mr-3">
+                            AK
+                        </div>
+                        <div>
+                            <div class="font-bold">Anna Kowalska</div>
+                            <div class="text-sm text-gray-500">Warszawa • Dom 10 kW</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 hover-lift">
+                    <div class="flex space-x-1 mb-4">
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "Pompa ciepła działa rewelacyjnie! Dom ciepły zimą, a latem klimatyzacja. 
+                        Polecam Azure Solar - fachowcy, którzy wiedzą co robią."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 gradient-teal rounded-full flex items-center justify-center text-white font-bold mr-3">
+                            MN
+                        </div>
+                        <div>
+                            <div class="font-bold">Marek Nowak</div>
+                            <div class="text-sm text-gray-500">Kraków • Pompa 12 kW</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 hover-lift">
+                    <div class="flex space-x-1 mb-4">
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "Najlepsza decyzja dla naszej firmy. Instalacja PV 50 kW zwróci się w 6 lat. 
+                        Terminowość i jakość na najwyższym poziomie!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                            PW
+                        </div>
+                        <div>
+                            <div class="font-bold">Piotr Wiśniewski</div>
+                            <div class="text-sm text-gray-500">Poznań • Firma 50 kW</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-azure text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Dołącz do 500+ Zadowolonych Klientów
+            </h2>
+            <p class="text-xl text-cyan-50 mb-8">
+                Skontaktuj się z nami i zrealizujmy razem Twój projekt OZE
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="kontakt.html" class="bg-white text-cyan-600 px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition text-lg">
+                    <i class="fas fa-envelope mr-2"></i> Bezpłatna wycena
+                </a>
+                <a href="kalkulator.html" class="bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-full font-semibold hover:bg-white/30 transition text-lg border-2 border-white">
+                    <i class="fas fa-calculator mr-2"></i> Kalkulator oszczędności
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-azure-reverse text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-solar-panel text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">Azure Solar</span>
+                    </div>
+                    <p class="text-cyan-100">Twój partner w odnawialnych źródłach energii</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Usługi</h4>
+                    <ul class="space-y-2 text-cyan-100">
+                        <li><a href="fotowoltaika.html" class="hover:text-white transition">Fotowoltaika</a></li>
+                        <li><a href="pompy-ciepla.html" class="hover:text-white transition">Pompy Ciepła</a></li>
+                        <li><a href="magazyny-energii.html" class="hover:text-white transition">Magazyny Energii</a></li>
+                        <li><a href="klimatyzacja.html" class="hover:text-white transition">Klimatyzacja</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Firma</h4>
+                    <ul class="space-y-2 text-cyan-100">
+                        <li><a href="o-nas.html" class="hover:text-white transition">O nas</a></li>
+                        <li><a href="realizacje.html" class="hover:text-white transition">Realizacje</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="kontakt.html" class="hover:text-white transition">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-cyan-100">
+                        <li><i class="fas fa-phone mr-2"></i> +48 123 456 789</li>
+                        <li><i class="fas fa-envelope mr-2"></i> kontakt@azure-solar.pl</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Warszawa, Polska</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-8 text-center text-cyan-100">
+                <p>&copy; 2024 Azure Solar. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn?.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        if (card.getAttribute('data-category') === filter) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

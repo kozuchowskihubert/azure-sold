@@ -1,0 +1,55 @@
+# Azure Solar - Terraform Variables (Production)
+# Copy this file to terraform.tfvars and fill in your values
+
+# Project Configuration
+project_name         = "azuresolar"
+environment          = "prod"
+location             = "westeurope"
+resource_group_name  = "rg-azure-solar-prod"
+
+# App Service Configuration
+app_service_sku       = "B1"  # Basic: B1, B2, B3 | Standard: S1, S2, S3 | Premium: P1V2, P2V2, P3V2
+app_service_always_on = true
+flask_env             = "production"
+
+# Database Configuration
+db_name           = "azure_solar"
+db_admin_username = "solaradmin"
+# db_password will be set in secrets.tfvars
+db_storage_mb     = 32768  # 32 GB
+db_sku_name       = "B_Standard_B1ms"  # Basic tier
+
+# Security (set these in secrets.tfvars, not here!)
+# secret_key     = "your-long-random-secret-key"
+# jwt_secret_key = "your-jwt-secret-key"
+# db_password    = "your-secure-database-password"
+
+# Email Configuration
+mail_server   = "smtp.gmail.com"
+mail_port     = 587
+mail_use_tls  = "True"
+# mail_username = "your-email@gmail.com"  # Set in secrets.tfvars
+# mail_password = "your-app-password"     # Set in secrets.tfvars
+mail_sender   = "solar@azure-solar.pl"
+
+# Frontend Configuration
+frontend_url = "https://azure-solar.vercel.app"
+cors_allowed_origins = [
+  "https://azure-solar.vercel.app",
+  "https://azure-solar-staging.vercel.app",
+  "http://localhost:3000"
+]
+
+# Static Web App (optional, use false if deploying to Vercel)
+deploy_static_web_app   = false
+static_web_app_location = "westeurope"
+static_web_app_sku      = "Free"
+
+# Tags
+tags = {
+  Project     = "AzureSolar"
+  Environment = "Production"
+  ManagedBy   = "Terraform"
+  Owner       = "HAOS Team"
+  CostCenter  = "IT"
+}

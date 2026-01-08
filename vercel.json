@@ -1,0 +1,55 @@
+{
+  "version": 2,
+  "public": true,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/", "destination": "/static/index.html" },
+    { "source": "/o-nas", "destination": "/static/o-nas.html" },
+    { "source": "/fotowoltaika", "destination": "/static/fotowoltaika.html" },
+    { "source": "/pompy-ciepla", "destination": "/static/pompy-ciepla.html" },
+    { "source": "/magazyny-energii", "destination": "/static/magazyny-energii.html" },
+    { "source": "/klimatyzacja", "destination": "/static/klimatyzacja.html" },
+    { "source": "/realizacje", "destination": "/static/realizacje.html" },
+    { "source": "/cennik", "destination": "/static/cennik.html" },
+    { "source": "/kontakt", "destination": "/static/kontakt.html" },
+    { "source": "/blog", "destination": "/static/blog.html" },
+    { "source": "/kalkulator", "destination": "/static/kalkulator.html" },
+    { "source": "/dotacje", "destination": "/static/dotacje.html" },
+    { "source": "/logowanie", "destination": "/static/logowanie.html" },
+    { "source": "/panel-klienta", "destination": "/static/panel-klienta.html" },
+    { "source": "/panel-admin", "destination": "/static/panel-admin.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/static/(.*\\.(html|css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}

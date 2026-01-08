@@ -1,0 +1,63 @@
+TWORZĘ TERAZ - 11 PLIKÓW HTML:
+
+=== BATCH 1: Usługi ===
+1. magazyny-energii.html (~800 linii)
+   - Hero + 4 pakiety (5/10/15/20 kWh: 18k/28k/38k/52k)
+   - Technologie LiFePO4 vs Li-ion
+   - Tryby pracy
+   
+2. klimatyzacja.html (~750 linii)
+   - Hero + 3 typy (Split/Multi/VRF: 3.5k/8k/20k)
+   - Klasy efektywności
+
+=== BATCH 2: Content ===
+3. realizacje.html (~850 linii)
+   - Portfolio 12 projektów z filtrami
+   - Lightbox gallery
+   
+4. blog.html (~800 linii)
+   - 8 artykułów z kategoriami
+   - Pagination
+   
+5. dotacje.html (~900 linii)
+   - Mój Prąd + Czyste Powietrze
+   - Przewodniki krok po kroku
+
+=== BATCH 3: Funkcjonalne ===
+6. kontakt.html (~600 linii)
+   - Formularz + Google Maps embed
+   - Dane kontaktowe
+   
+7. kalkulator.html (~950 linii)
+   - 3 zakładki (PV/Pompa/Combo)
+   - Wykresy + eksport PDF
+   
+8. cennik.html (~700 linii)
+   - Tabele cenowe wszystkich usług
+   
+9. logowanie.html (~400 linii)
+   - Minimalistyczny formularz logowania
+
+=== BATCH 4: Panele (SZCZEGÓŁOWE!) ===
+10. panel-klienta.html (~1200 linii) ⭐
+    - Dashboard z Chart.js
+    - Monitoring produkcji (wykresy)
+    - Faktury, zgłoszenia
+    - Sidebar nawigacja
+    
+11. panel-admin.html (~1400 linii) ⭐
+    - Dashboard z KPI cards
+    - Wykresy sprzedaży (Chart.js)
+    - Tabela leadów
+    - Kalendarz wizyt
+    - Kanban board projektów
+
+TOTAL: ~9,550 linii kodu, ~430 KB
+
+Każda strona ma:
+✓ Pełną nawigację z dropdown
+✓ Responsywne layout
+✓ Azure blue-green gradient
+✓ Animacje hover
+✓ Footer z linkami
+✓ Mobile menu

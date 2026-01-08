@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pompy Ciepła - Ekologiczne Ogrzewanie | Azure Solar</title>
+    <meta name="description" content="Profesjonalny montaż pomp ciepła powietrze-woda. Oszczędność energii do 75%. Dotacje Czyste Powietrze do 69 000 zł. Gwarancja i serwis 24/7.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'azure-blue': '#0EA5E9',
+                        'azure-cyan': '#06B6D4',
+                        'azure-green': '#10B981',
+                        'azure-emerald': '#059669',
+                        'azure-teal': '#14B8A6'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'heading': ['Poppins', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .gradient-azure {
+            background: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%);
+        }
+        .gradient-azure-reverse {
+            background: linear-gradient(135deg, #10B981 0%, #0EA5E9 100%);
+        }
+        .gradient-teal {
+            background: linear-gradient(135deg, #14B8A6 0%, #059669 100%);
+        }
+        .text-gradient-azure {
+            background: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 gradient-azure rounded-xl flex items-center justify-center">
+                        <i class="fas fa-solar-panel text-2xl text-white"></i>
+                    </div>
+                    <div class="text-2xl font-bold text-gray-900">Azure Solar</div>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Start</a>
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-blue-600 transition-colors font-medium flex items-center">
+                            Usługi <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+                            <div class="p-4 space-y-2">
+                                <a href="fotowoltaika.html" class="flex items-start p-3 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-green-50 transition-all group/item">
+                                    <i class="fas fa-solar-panel text-2xl text-blue-500 mt-1 mr-4"></i>
+                                    <div>
+                                        <div class="font-bold text-gray-900 group-hover/item:text-blue-600">Fotowoltaika</div>
+                                        <div class="text-sm text-gray-600">Instalacje PV 5-50 kW</div>
+                                    </div>
+                                </a>
+                                <a href="pompy-ciepla.html" class="flex items-start p-3 rounded-lg bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-500">
+                                    <i class="fas fa-temperature-half text-2xl text-green-500 mt-1 mr-4"></i>
+                                    <div>
+                                        <div class="font-bold text-gray-900 text-green-600">Pompy Ciepła</div>
+                                        <div class="text-sm text-gray-600">Ogrzewanie i chłodzenie</div>
+                                    </div>
+                                </a>
+                                <a href="magazyny-energii.html" class="flex items-start p-3 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-green-50 transition-all group/item">
+                                    <i class="fas fa-battery-full text-2xl text-cyan-500 mt-1 mr-4"></i>
+                                    <div>
+                                        <div class="font-bold text-gray-900 group-hover/item:text-cyan-600">Magazyny Energii</div>
+                                        <div class="text-sm text-gray-600">Baterie 5-20 kWh</div>
+                                    </div>
+                                </a>
+                                <a href="klimatyzacja.html" class="flex items-start p-3 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-green-50 transition-all group/item">
+                                    <i class="fas fa-wind text-2xl text-teal-500 mt-1 mr-4"></i>
+                                    <div>
+                                        <div class="font-bold text-gray-900 group-hover/item:text-teal-600">Klimatyzacja</div>
+                                        <div class="text-sm text-gray-600">Systemy split i multi-split</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="o-nas.html" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">O nas</a>
+                    <a href="realizacje.html" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Realizacje</a>
+                    <a href="blog.html" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Blog</a>
+                    <a href="dotacje.html" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Dotacje</a>
+                    <a href="#contact" class="gradient-azure text-white px-6 py-3 rounded-lg font-bold hover:shadow-xl transition-all hover:scale-105">
+                        Kontakt
+                    </a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 hover:text-blue-500 transition-colors py-2">Start</a>
+                <a href="fotowoltaika.html" class="block text-gray-700 hover:text-blue-500 transition-colors py-2">Fotowoltaika</a>
+                <a href="pompy-ciepla.html" class="block text-green-600 font-bold py-2">Pompy Ciepła</a>
+                <a href="magazyny-energii.html" class="block text-gray-700 hover:text-cyan-500 transition-colors py-2">Magazyny Energii</a>
+                <a href="klimatyzacja.html" class="block text-gray-700 hover:text-teal-500 transition-colors py-2">Klimatyzacja</a>
+                <a href="o-nas.html" class="block text-gray-700 hover:text-blue-500 transition-colors py-2">O nas</a>
+                <a href="realizacje.html" class="block text-gray-700 hover:text-blue-500 transition-colors py-2">Realizacje</a>
+                <a href="blog.html" class="block text-gray-700 hover:text-blue-500 transition-colors py-2">Blog</a>
+                <a href="dotacje.html" class="block text-gray-700 hover:text-blue-500 transition-colors py-2">Dotacje</a>
+                <a href="#contact" class="block gradient-azure text-white px-6 py-3 rounded-lg font-bold text-center">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 gradient-azure-reverse relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-10 left-20 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse delay-75"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <div class="inline-block bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full mb-6">
+                    <span class="font-semibold text-sm">💧 POMPY CIEPŁA • DOTACJE DO 69 000 ZŁ</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    Ekologiczne Ogrzewanie<br>i <span class="text-yellow-300">Chłodzenie</span> Domu
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto">
+                    Pompy ciepła powietrze-woda to nowoczesne rozwiązanie, które obniża koszty ogrzewania o 75% i zapewnia komfort przez cały rok
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <a href="#packages" class="bg-white text-green-600 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all hover:scale-105 inline-flex items-center justify-center">
+                        <i class="fas fa-box-open mr-2"></i>
+                        Zobacz pakiety
+                    </a>
+                    <a href="#subsidy" class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all hover:scale-105 inline-flex items-center justify-center">
+                        <i class="fas fa-hand-holding-usd mr-2"></i>
+                        Dotacje do 69 000 zł
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                        <div class="text-4xl font-bold mb-2">75%</div>
+                        <div class="text-white/80 text-sm">Oszczędność energii</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                        <div class="text-4xl font-bold mb-2">COP 5.0</div>
+                        <div class="text-white/80 text-sm">Wysoka efektywność</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                        <div class="text-4xl font-bold mb-2">-25°C</div>
+                        <div class="text-white/80 text-sm">Praca w mrozie</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                        <div class="text-4xl font-bold mb-2">10 lat</div>
+                        <div class="text-white/80 text-sm">Gwarancja</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block bg-gradient-to-r from-green-100 to-emerald-100 px-4 py-2 rounded-full mb-4">
+                    <span class="text-green-600 font-semibold text-sm">KORZYŚCI</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Dlaczego <span class="text-gradient-azure">Pompa Ciepła?</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border-2 border-green-200 hover:border-green-400 transition-all hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-piggy-bank text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Ogromne Oszczędności</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Do 75% niższe koszty ogrzewania w porównaniu z tradycyjnymi systemami. Z każdej 1 kWh energii elektrycznej otrzymujesz 4-5 kWh ciepła.
+                    </p>
+                    <div class="mt-4 text-2xl font-bold text-green-600">-75% rachunków</div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 border-2 border-blue-200 hover:border-blue-400 transition-all hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-snowflake text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Ogrzewanie + Chłodzenie</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Jedno urządzenie zapewnia komfort przez cały rok. Zimą ciepło, latem przyjemne chłodzenie.
+                    </p>
+                    <div class="mt-4 text-2xl font-bold text-blue-600">365 dni/rok</div>
+                </div>
+
+                <div class="bg-gradient-to-br from-teal-50 to-green-50 rounded-2xl p-8 border-2 border-teal-200 hover:border-teal-400 transition-all hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-teal-400 to-green-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-leaf text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">100% Ekologiczne</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Zerowa emisja CO₂ w miejscu użytkowania. Energia z odnawialnych źródeł (powietrze). Idealne połączenie z fotowoltaiką.
+                    </p>
+                    <div class="mt-4 text-2xl font-bold text-teal-600">0 kg CO₂</div>
+                </div>
+
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8 border-2 border-yellow-200 hover:border-yellow-400 transition-all hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-hand-holding-usd text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Dotacje Państwowe</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Program Czyste Powietrze oferuje do 69 000 zł dofinansowania na pompę ciepła. Pomożemy w złożeniu wniosku.
+                    </p>
+                    <div class="mt-4 text-2xl font-bold text-yellow-600">Do 69 000 zł</div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border-2 border-purple-200 hover:border-purple-400 transition-all hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Niezależność Energetyczna</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        W połączeniu z fotowoltaiką osiągniesz pełną autonomię energetyczną. Ogrzewanie własną energią słoneczną.
+                    </p>
+                    <div class="mt-4 text-2xl font-bold text-purple-600">PV + PC = 100%</div>
+                </div>
+
+                <div class="bg-gradient-to-br from-gray-50 to-slate-50 rounded-2xl p-8 border-2 border-gray-200 hover:border-gray-400 transition-all hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-gray-400 to-slate-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-cog text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Bezobsługowe</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Całkowicie automatyczne działanie, brak potrzeby dostarczania paliwa. Bez kotłowni, węgla, gazu czy oleju.
+                    </p>
+                    <div class="mt-4 text-2xl font-bold text-gray-600">0 h obsługi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="py-20 bg-gradient-to-br from-blue-50 via-white to-green-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block bg-gradient-to-r from-green-100 to-emerald-100 px-4 py-2 rounded-full mb-4">
+                    <span class="text-green-600 font-semibold text-sm">PAKIETY CENOWE</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Wybierz <span class="text-gradient-azure">Swoją Pompę</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Kompleksowe pakiety dopasowane do powierzchni domu i potrzeb grzewczych
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Package 1: DOM -->
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-gray-200 hover:border-green-400 transition-all hover:shadow-2xl hover:-translate-y-2">
+                    <div class="bg-gradient-to-br from-green-400 to-emerald-500 p-8 text-white">
+                        <div class="text-sm font-semibold mb-2 opacity-90">DOM DO 120 M²</div>
+                        <h3 class="text-3xl font-bold mb-2">KOMPAKT</h3>
+                        <div class="text-5xl font-bold mb-2">28 000 zł</div>
+                        <div class="text-sm opacity-90">Moc 6-8 kW</div>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Pompa ciepła powietrze-woda 6-8 kW</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Zasobnik ciepłej wody 200L</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Sterownik pogodowy</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Montaż i uruchomienie</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Gwarancja 5 lat</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Dotacja do 21 000 zł</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white text-center px-6 py-4 rounded-xl font-bold hover:shadow-xl transition-all hover:scale-105">
+                            Bezpłatna wycena
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 2: DOM ŚREDNI - MOST POPULAR -->
+                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-green-500 relative transform scale-105">
+                    <div class="absolute top-0 left-0 right-0 bg-yellow-400 text-gray-900 text-center py-2 font-bold text-sm">
+                        ⭐ NAJPOPULARNIEJSZY
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-500 to-green-500 p-8 text-white mt-8">
+                        <div class="text-sm font-semibold mb-2 opacity-90">DOM 120-180 M²</div>
+                        <h3 class="text-3xl font-bold mb-2">OPTYMALNY</h3>
+                        <div class="text-5xl font-bold mb-2">42 000 zł</div>
+                        <div class="text-sm opacity-90">Moc 10-12 kW</div>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Pompa ciepła powietrze-woda 10-12 kW</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Zasobnik ciepłej wody 300L</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Sterownik WiFi z aplikacją</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Montaż i uruchomienie</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Gwarancja 7 lat</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Funkcja chłodzenia</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Dotacja do 35 000 zł</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block w-full bg-gradient-to-r from-blue-500 to-green-500 text-white text-center px-6 py-4 rounded-xl font-bold hover:shadow-xl transition-all hover:scale-105">
+                            Zamawiam wycenę
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 3: DUŻY DOM -->
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-gray-200 hover:border-blue-400 transition-all hover:shadow-2xl hover:-translate-y-2">
+                    <div class="bg-gradient-to-br from-blue-600 to-cyan-500 p-8 text-white">
+                        <div class="text-sm font-semibold mb-2 opacity-90">DOM POWYŻEJ 180 M²</div>
+                        <h3 class="text-3xl font-bold mb-2">PREMIUM</h3>
+                        <div class="text-5xl font-bold mb-2">58 000 zł</div>
+                        <div class="text-sm opacity-90">Moc 14-16 kW</div>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Pompa ciepła powietrze-woda 14-16 kW</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Zasobnik ciepłej wody 400L</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Inteligentny sterownik WiFi</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Montaż i uruchomienie</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Gwarancja 10 lat</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Funkcja chłodzenia</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Inwerter DC</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Dotacja do 69 000 zł</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-center px-6 py-4 rounded-xl font-bold hover:shadow-xl transition-all hover:scale-105">
+                            Indywidualna wycena
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center text-gray-600">
+                <p class="text-lg">💡 Wszystkie ceny zawierają montaż, uruchomienie i przeszkolenie. Bez ukrytych kosztów.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subsidy Section -->
+    <section id="subsidy" class="py-20 gradient-azure-reverse">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12 text-white">
+                    <div class="inline-block bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full mb-6">
+                        <span class="font-semibold">💰 PROGRAM CZYSTE POWIETRZE</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                        Otrzymaj <span class="text-yellow-300">69 000 zł</span> Dotacji
+                    </h2>
+                    <p class="text-xl text-white/90 max-w-3xl mx-auto">
+                        Pomożemy w uzyskaniu maksymalnego dofinansowania z programu Czyste Powietrze
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-coins text-3xl text-gray-900"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Poziomy Dotacji</h3>
+                                <p class="text-white/70">W zależności od dochodu</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 text-white">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-yellow-300 mt-1 mr-3"></i>
+                                <div>
+                                    <div class="font-bold">Poziom podstawowy</div>
+                                    <div class="text-white/80">Do 30 000 zł (60% kosztów)</div>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-yellow-300 mt-1 mr-3"></i>
+                                <div>
+                                    <div class="font-bold">Poziom podwyższony</div>
+                                    <div class="text-white/80">Do 45 000 zł (70% kosztów)</div>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-yellow-300 mt-1 mr-3"></i>
+                                <div>
+                                    <div class="font-bold">Poziom najwyższy</div>
+                                    <div class="text-white/80">Do 69 000 zł (100% kosztów)</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-green-400 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-clipboard-check text-3xl text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Co Finansowane?</h3>
+                                <p class="text-white/70">Zakres dofinansowania</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 text-white">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-300 mt-1 mr-3"></i>
+                                <span>Pompa ciepła (zakup i montaż)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-300 mt-1 mr-3"></i>
+                                <span>Zasobnik ciepłej wody</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-300 mt-1 mr-3"></i>
+                                <span>System sterowania</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-300 mt-1 mr-3"></i>
+                                <span>Instalacja wewnętrzna</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-300 mt-1 mr-3"></i>
+                                <span>Audyt energetyczny</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-2xl">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+                        <i class="fas fa-rocket text-blue-500 mr-3"></i>
+                        5 Kroków do Dotacji
+                    </h3>
+                    <div class="grid md:grid-cols-5 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
+                                1
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-2">Kontakt</h4>
+                            <p class="text-sm text-gray-600">Zgłoś się do nas</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
+                                2
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-2">Audyt</h4>
+                            <p class="text-sm text-gray-600">Wykonamy audyt</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
+                                3
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-2">Wniosek</h4>
+                            <p class="text-sm text-gray-600">Złożymy za Ciebie</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
+                                4
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-2">Montaż</h4>
+                            <p class="text-sm text-gray-600">Instalujemy pompę</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
+                                5
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-2">Przelew</h4>
+                            <p class="text-sm text-gray-600">Otrzymujesz dotację</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl p-12 text-center text-white shadow-2xl">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Gotowy na <span class="text-yellow-300">Oszczędności?</span>
+                </h2>
+                <p class="text-xl mb-8 text-white/90">
+                    Skontaktuj się z nami i otrzymaj bezpłatną wycenę pompy ciepła dopasowanej do Twojego domu
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="bg-white text-green-600 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all hover:scale-105 inline-flex items-center justify-center">
+                        <i class="fas fa-phone mr-2"></i>
+                        Zadzwoń: +48 123 456 789
+                    </a>
+                    <a href="#contact" class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all hover:scale-105 inline-flex items-center justify-center">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Wyślij wiadomość
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-blue-50 via-white to-green-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <div class="inline-block bg-gradient-to-r from-blue-100 to-green-100 px-4 py-2 rounded-full mb-4">
+                        <span class="text-blue-600 font-semibold text-sm">KONTAKT</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                        Zapytaj o <span class="text-gradient-azure">Pompę Ciepła</span>
+                    </h2>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100">
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-user text-green-500 mr-2"></i>
+                                    Imię i nazwisko *
+                                </label>
+                                <input type="text" required placeholder="Jan Kowalski"
+                                       class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-green-100 focus:border-green-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-phone text-blue-500 mr-2"></i>
+                                    Telefon *
+                                </label>
+                                <input type="tel" required placeholder="+48 123 456 789"
+                                       class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                <i class="fas fa-home text-cyan-500 mr-2"></i>
+                                Powierzchnia domu (m²)
+                            </label>
+                            <input type="number" placeholder="150"
+                                   class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-cyan-100 focus:border-cyan-500 transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                <i class="fas fa-comment-dots text-green-500 mr-2"></i>
+                                Dodatkowe informacje
+                            </label>
+                            <textarea rows="4" placeholder="Opisz swoje potrzeby..."
+                                      class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-green-100 focus:border-green-500 transition-all resize-y"></textarea>
+                        </div>
+
+                        <button type="submit"
+                                class="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Wyślij zapytanie
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-azure text-white py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                            <i class="fas fa-solar-panel text-2xl text-white"></i>
+                        </div>
+                        <div class="text-2xl font-bold">Azure Solar</div>
+                    </div>
+                    <p class="text-white/80 mb-6 leading-relaxed">
+                        Profesjonalne rozwiązania OZE - fotowoltaika, pompy ciepła, magazyny energii.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-yellow-300">Usługi</h4>
+                    <ul class="space-y-3 text-white/80">
+                        <li><a href="fotowoltaika.html" class="hover:text-white hover:translate-x-1 inline-block transition-all">
+                            <i class="fas fa-solar-panel mr-2 text-yellow-300"></i>Fotowoltaika
+                        </a></li>
+                        <li><a href="pompy-ciepla.html" class="text-yellow-300 font-bold">
+                            <i class="fas fa-temperature-half mr-2"></i>Pompy ciepła
+                        </a></li>
+                        <li><a href="magazyny-energii.html" class="hover:text-white hover:translate-x-1 inline-block transition-all">
+                            <i class="fas fa-battery-full mr-2 text-yellow-300"></i>Magazyny energii
+                        </a></li>
+                        <li><a href="klimatyzacja.html" class="hover:text-white hover:translate-x-1 inline-block transition-all">
+                            <i class="fas fa-wind mr-2 text-yellow-300"></i>Klimatyzacja
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-yellow-300">Firma</h4>
+                    <ul class="space-y-3 text-white/80">
+                        <li><a href="o-nas.html" class="hover:text-white hover:translate-x-1 inline-block transition-all">
+                            <i class="fas fa-building mr-2"></i>O nas
+                        </a></li>
+                        <li><a href="realizacje.html" class="hover:text-white hover:translate-x-1 inline-block transition-all">
+                            <i class="fas fa-images mr-2"></i>Realizacje
+                        </a></li>
+                        <li><a href="dotacje.html" class="hover:text-white hover:translate-x-1 inline-block transition-all">
+                            <i class="fas fa-hand-holding-usd mr-2"></i>Dotacje
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-yellow-300">Kontakt</h4>
+                    <ul class="space-y-4 text-white/80">
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-3 text-yellow-300"></i>
+                            <a href="tel:+48123456789" class="hover:text-white font-semibold">+48 123 456 789</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-yellow-300"></i>
+                            <a href="mailto:kontakt@azure-solar.pl" class="hover:text-white font-semibold">kontakt@azure-solar.pl</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 pt-8 text-center text-white/70 text-sm">
+                &copy; 2024 Azure Solar. Wszystkie prawa zastrzeżone.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

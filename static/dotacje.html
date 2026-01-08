@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dotacje 2024 • Do 69 000 zł | Azure Solar</title>
+    <meta name="description" content="Dotacje na fotowoltaikę i pompy ciepła 2024. Mój Prąd, Czyste Powietrze, ulga termomodernizacyjna. Pomożemy uzyskać dofinansowanie.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azure-blue: #0EA5E9;
+            --azure-cyan: #06B6D4;
+            --azure-green: #10B981;
+            --azure-emerald: #059669;
+            --azure-teal: #14B8A6;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .gradient-azure { background: linear-gradient(135deg, var(--azure-blue) 0%, var(--azure-green) 100%); }
+        .gradient-azure-reverse { background: linear-gradient(135deg, var(--azure-green) 0%, var(--azure-blue) 100%); }
+        .text-gradient-azure { background: linear-gradient(135deg, var(--azure-blue), var(--azure-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(14, 165, 233, 0.2); }
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .mobile-menu.active { max-height: 500px; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-item.active .faq-answer { max-height: 500px; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+        .faq-icon { transition: transform 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-blue-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 gradient-azure rounded-xl flex items-center justify-center">
+                        <i class="fas fa-solar-panel text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-gradient-azure">Azure Solar</span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-cyan-600 transition font-medium">Strona główna</a>
+                    <div class="relative group">
+                        <button class="text-gray-600 hover:text-cyan-600 transition font-medium flex items-center">
+                            Usługi <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+                            <a href="fotowoltaika.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-sky-50 hover:to-cyan-50 transition">
+                                <i class="fas fa-solar-panel text-sky-500 mr-2"></i> Fotowoltaika
+                            </a>
+                            <a href="pompy-ciepla.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 transition">
+                                <i class="fas fa-fire text-orange-500 mr-2"></i> Pompy Ciepła
+                            </a>
+                            <a href="magazyny-energii.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 transition">
+                                <i class="fas fa-battery-full text-emerald-500 mr-2"></i> Magazyny Energii
+                            </a>
+                            <a href="klimatyzacja.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition rounded-b-xl">
+                                <i class="fas fa-snowflake text-blue-500 mr-2"></i> Klimatyzacja
+                            </a>
+                        </div>
+                    </div>
+                    <a href="realizacje.html" class="text-gray-600 hover:text-cyan-600 transition font-medium">Realizacje</a>
+                    <a href="cennik.html" class="text-gray-600 hover:text-cyan-600 transition font-medium">Cennik</a>
+                    <a href="kontakt.html" class="gradient-azure text-white px-6 py-3 rounded-full hover:shadow-xl transition font-semibold">
+                        Kontakt
+                    </a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t">
+            <a href="index.html" class="block px-6 py-3 hover:bg-gray-50">Strona główna</a>
+            <a href="fotowoltaika.html" class="block px-6 py-3 hover:bg-gray-50">Fotowoltaika</a>
+            <a href="pompy-ciepla.html" class="block px-6 py-3 hover:bg-gray-50">Pompy Ciepła</a>
+            <a href="magazyny-energii.html" class="block px-6 py-3 hover:bg-gray-50">Magazyny Energii</a>
+            <a href="klimatyzacja.html" class="block px-6 py-3 hover:bg-gray-50">Klimatyzacja</a>
+            <a href="realizacje.html" class="block px-6 py-3 hover:bg-gray-50">Realizacje</a>
+            <a href="cennik.html" class="block px-6 py-3 hover:bg-gray-50">Cennik</a>
+            <a href="kontakt.html" class="block px-6 py-3 hover:bg-gray-50">Kontakt</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative gradient-azure text-white py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full mb-6">
+                <i class="fas fa-hand-holding-usd text-2xl mr-3"></i>
+                <span class="font-semibold">Dotacje 2024 • Nawet 69 000 zł</span>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                Dofinansowanie na<br/>
+                <span class="text-cyan-200">OZE</span>
+            </h1>
+            <p class="text-xl text-cyan-50 max-w-3xl mx-auto">
+                Pomożemy uzyskać dotację na fotowoltaikę i pompę ciepła
+            </p>
+        </div>
+    </section>
+
+    <!-- Programs Overview -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Mój Prąd -->
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-3xl p-8 hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-solar-panel text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Mój Prąd 7.0</h3>
+                    <p class="text-4xl font-bold text-orange-600 mb-4">7 000 zł</p>
+                    <p class="text-gray-600 mb-6">Dotacja na instalację fotowoltaiczną</p>
+                    <a href="#moj-prad" class="block text-center bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition">
+                        Sprawdź warunki
+                    </a>
+                </div>
+
+                <!-- Czyste Powietrze -->
+                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 hover-lift border-4 border-emerald-400">
+                    <div class="w-16 h-16 gradient-azure rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-fire text-white text-3xl"></i>
+                    </div>
+                    <div class="inline-block bg-emerald-500 text-white px-4 py-1 rounded-full text-sm font-bold mb-3">
+                        NAJWYŻSZA DOTACJA
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Czyste Powietrze</h3>
+                    <p class="text-4xl font-bold text-emerald-600 mb-4">do 69 000 zł</p>
+                    <p class="text-gray-600 mb-6">Dotacja na pompę ciepła + termomodernizację</p>
+                    <a href="#czyste-powietrze" class="block text-center gradient-azure text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition">
+                        Sprawdź warunki
+                    </a>
+                </div>
+
+                <!-- Ulga Termomodernizacyjna -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-percent text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Ulga w PIT</h3>
+                    <p class="text-4xl font-bold text-purple-600 mb-4">do 53 000 zł</p>
+                    <p class="text-gray-600 mb-6">Odliczenie termomodernizacji w PIT</p>
+                    <a href="#ulga" class="block text-center bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition">
+                        Sprawdź warunki
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Mój Prąd Section -->
+    <section id="moj-prad" class="py-20 bg-gradient-to-br from-yellow-50 to-orange-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">
+                    <i class="fas fa-solar-panel text-orange-600 mr-3"></i>
+                    <span class="text-gradient-azure">Mój Prąd 7.0</span>
+                </h2>
+                <p class="text-xl text-gray-600">Do 7 000 zł dotacji na fotowoltaikę</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-3xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-6">Kto może otrzymać dotację?</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-emerald-500 text-xl mr-3 mt-1"></i>
+                            <span><strong>Właściciele domów jednorodzinnych</strong> - istniejących lub w budowie</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-emerald-500 text-xl mr-3 mt-1"></i>
+                            <span><strong>Moc instalacji:</strong> 2-10 kW</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-emerald-500 text-xl mr-3 mt-1"></i>
+                            <span><strong>Brak limitu dochodowego</strong> - każdy może wnioskować</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-emerald-500 text-xl mr-3 mt-1"></i>
+                            <span><strong>Prosument energii elektrycznej</strong></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-6">Warunki otrzymania</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-orange-500 text-xl mr-3 mt-1"></i>
+                            <span>Instalacja nowa, nigdy nieużywana</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-orange-500 text-xl mr-3 mt-1"></i>
+                            <span>Montaż przez certyfikowaną firmę</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-orange-500 text-xl mr-3 mt-1"></i>
+                            <span>Umowa kompleksowa (sprzęt + montaż)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-orange-500 text-xl mr-3 mt-1"></i>
+                            <span>Wpis do rejestru prosumentów</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-white rounded-3xl p-8 shadow-xl">
+                <h3 class="text-2xl font-bold mb-6">Proces uzyskania dotacji - 5 kroków</h3>
+                <div class="grid md:grid-cols-5 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 gradient-azure rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-xl">1</div>
+                        <h4 class="font-bold mb-2">Montaż instalacji</h4>
+                        <p class="text-sm text-gray-600">Realizacja przez certyfikowaną firmę</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 gradient-azure rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-xl">2</div>
+                        <h4 class="font-bold mb-2">Wpis do rejestru</h4>
+                        <p class="text-sm text-gray-600">Rejestracja u operatora sieci</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 gradient-azure rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-xl">3</div>
+                        <h4 class="font-bold mb-2">Złożenie wniosku</h4>
+                        <p class="text-sm text-gray-600">Wypełnienie formularza online</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 gradient-azure rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-xl">4</div>
+                        <h4 class="font-bold mb-2">Weryfikacja</h4>
+                        <p class="text-sm text-gray-600">Sprawdzenie dokumentów</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 gradient-azure rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-xl">5</div>
+                        <h4 class="font-bold mb-2">Wypłata</h4>
+                        <p class="text-sm text-gray-600">Przelew na konto</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Czyste Powietrze Section -->
+    <section id="czyste-powietrze" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">
+                    <i class="fas fa-fire text-emerald-600 mr-3"></i>
+                    <span class="text-gradient-azure">Czyste Powietrze</span>
+                </h2>
+                <p class="text-xl text-gray-600">Nawet 69 000 zł na pompę ciepła + termomodernizację</p>
+            </div>
+
+            <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 shadow-xl mb-8">
+                <h3 class="text-2xl font-bold mb-6">Poziomy dofinansowania</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full bg-white rounded-2xl overflow-hidden">
+                        <thead class="gradient-azure text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left">Poziom</th>
+                                <th class="px-6 py-4 text-center">Dochód na osobę</th>
+                                <th class="px-6 py-4 text-center">Pompa ciepła</th>
+                                <th class="px-6 py-4 text-center">Razem max</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-bold">Podstawowy</td>
+                                <td class="px-6 py-4 text-center">bez limitu</td>
+                                <td class="px-6 py-4 text-center text-2xl font-bold text-emerald-600">21 000 zł</td>
+                                <td class="px-6 py-4 text-center text-xl font-bold">37 000 zł</td>
+                            </tr>
+                            <tr class="hover:bg-emerald-50 bg-emerald-50/50">
+                                <td class="px-6 py-4 font-bold">Podwyższony</td>
+                                <td class="px-6 py-4 text-center">do 1 400 zł/m-c</td>
+                                <td class="px-6 py-4 text-center text-2xl font-bold text-emerald-600">35 000 zł</td>
+                                <td class="px-6 py-4 text-center text-xl font-bold">56 000 zł</td>
+                            </tr>
+                            <tr class="hover:bg-emerald-50 bg-emerald-100">
+                                <td class="px-6 py-4 font-bold">Najwyższy <span class="text-xs bg-emerald-500 text-white px-2 py-1 rounded-full ml-2">MAX</span></td>
+                                <td class="px-6 py-4 text-center">do 1 050 zł/m-c</td>
+                                <td class="px-6 py-4 text-center text-2xl font-bold text-emerald-600">40 000 zł</td>
+                                <td class="px-6 py-4 text-center text-xl font-bold">69 000 zł</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white rounded-3xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-6">Co można sfinansować?</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-fire text-orange-500 text-xl mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-bold">Pompa ciepła</div>
+                                <div class="text-sm text-gray-600">21 000 - 40 000 zł</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-solar-panel text-yellow-500 text-xl mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-bold">Fotowoltaika</div>
+                                <div class="text-sm text-gray-600">7 000 zł</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-home text-blue-500 text-xl mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-bold">Ocieplenie ścian</div>
+                                <div class="text-sm text-gray-600">do 15 000 zł</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-window-maximize text-cyan-500 text-xl mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-bold">Wymiana okien i drzwi</div>
+                                <div class="text-sm text-gray-600">do 9 000 zł</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-chart-bar text-emerald-500 text-xl mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-bold">Inne</div>
+                                <div class="text-sm text-gray-600">Dach, wentylacja, audyt</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-6">Kalkulator dochodowy</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Liczba osób w gospodarstwie</label>
+                            <input type="number" id="persons" value="4" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-cyan-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Dochód roczny brutto (zł)</label>
+                            <input type="number" id="income" value="120000" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-cyan-500 focus:outline-none">
+                        </div>
+                        <button onclick="calculateLevel()" class="w-full gradient-azure text-white px-6 py-3 rounded-xl font-bold hover:shadow-xl transition">
+                            Sprawdź poziom
+                        </button>
+                        <div id="level-result" class="bg-emerald-50 rounded-xl p-4 text-center hidden">
+                            <div class="text-sm text-gray-600 mb-1">Twój poziom dofinansowania:</div>
+                            <div class="text-2xl font-bold text-emerald-600" id="level-name">Podwyższony</div>
+                            <div class="text-sm text-gray-600 mt-1">Maksymalna dotacja: <span class="font-bold" id="max-grant">56 000 zł</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-3xl p-8 text-center">
+                <h3 class="text-3xl font-bold mb-4">
+                    <i class="fas fa-hand-holding-heart mr-3"></i>
+                    Kompleksowa Pomoc w Uzyskaniu Dotacji
+                </h3>
+                <p class="text-xl text-emerald-50 mb-6">
+                    Zajmiemy się całym procesem - od wniosku po wypłatę dotacji
+                </p>
+                <a href="#contact-form" class="inline-block bg-white text-emerald-600 px-8 py-4 rounded-full font-bold hover:shadow-2xl transition text-lg">
+                    Zamów pomoc w dotacji
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ulga Termomodernizacyjna Section -->
+    <section id="ulga" class="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">
+                    <i class="fas fa-percent text-purple-600 mr-3"></i>
+                    <span class="text-gradient-azure">Ulga Termomodernizacyjna</span>
+                </h2>
+                <p class="text-xl text-gray-600">Do 53 000 zł odliczenia w PIT</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-3xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-6">Co obejmuje ulga?</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-fire text-purple-500 text-xl mr-3 mt-1"></i>
+                            <span>Zakup i montaż pompy ciepła</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-solar-panel text-purple-500 text-xl mr-3 mt-1"></i>
+                            <span>Instalacja fotowoltaiczna</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-home text-purple-500 text-xl mr-3 mt-1"></i>
+                            <span>Ocieplenie budynku</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-window-maximize text-purple-500 text-xl mr-3 mt-1"></i>
+                            <span>Wymiana okien i drzwi</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-fan text-purple-500 text-xl mr-3 mt-1"></i>
+                            <span>Wentylacja mechaniczna z rekuperacją</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-6">Jak rozliczyć ulgę?</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 gradient-azure rounded-full flex items-center justify-center text-white font-bold mr-3">1</div>
+                                <h4 class="font-bold">Maksymalna kwota odliczenia</h4>
+                            </div>
+                            <p class="text-gray-600 ml-11">53 000 zł przez 6 lat podatkowych</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 gradient-azure rounded-full flex items-center justify-center text-white font-bold mr-3">2</div>
+                                <h4 class="font-bold">Wymóg audytu</h4>
+                            </div>
+                            <p class="text-gray-600 ml-11">Przed i po termomodernizacji (koszt ~1000 zł)</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 gradient-azure rounded-full flex items-center justify-center text-white font-bold mr-3">3</div>
+                                <h4 class="font-bold">Rozliczenie w PIT</h4>
+                            </div>
+                            <p class="text-gray-600 ml-11">Odliczenie w zeznaniu rocznym PIT-36 lub PIT-37</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-white rounded-3xl p-8 shadow-xl">
+                <h3 class="text-2xl font-bold mb-6">Przykład rozliczenia</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-purple-50 rounded-xl p-6">
+                        <div class="text-sm text-gray-600 mb-2">Koszt inwestycji</div>
+                        <div class="text-3xl font-bold text-purple-600">80 000 zł</div>
+                        <div class="text-xs text-gray-500 mt-2">Pompa ciepła + termomodernizacja</div>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-6">
+                        <div class="text-sm text-gray-600 mb-2">Odliczenie w PIT</div>
+                        <div class="text-3xl font-bold text-purple-600">53 000 zł</div>
+                        <div class="text-xs text-gray-500 mt-2">Maksymalna kwota ulgi</div>
+                    </div>
+                    <div class="bg-emerald-50 rounded-xl p-6">
+                        <div class="text-sm text-gray-600 mb-2">Zwrot podatku</div>
+                        <div class="text-3xl font-bold text-emerald-600">~15 000 zł</div>
+                        <div class="text-xs text-gray-500 mt-2">Przy 28% skali podatkowej</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="text-gradient-azure">Najczęściej Zadawane Pytania</span>
+                </h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left font-bold flex justify-between items-center hover:bg-gray-100 transition">
+                        <span>Czy mogę łączyć różne programy dotacyjne?</span>
+                        <i class="fas fa-chevron-down faq-icon text-cyan-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="py-4 text-gray-600">Tak! Możesz łączyć Czyste Powietrze z ulgą termomodernizacyjną. Najpierw otrzymujesz dotację, a następnie odliczasz resztę kosztów w PIT.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left font-bold flex justify-between items-center hover:bg-gray-100 transition">
+                        <span>Jak długo czeka się na wypłatę dotacji?</span>
+                        <i class="fas fa-chevron-down faq-icon text-cyan-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="py-4 text-gray-600">Mój Prąd: 30-60 dni od złożenia wniosku. Czyste Powietrze: 30-90 dni w zależności od województwa.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left font-bold flex justify-between items-center hover:bg-gray-100 transition">
+                        <span>Czy pomożecie w wypełnieniu wniosków?</span>
+                        <i class="fas fa-chevron-down faq-icon text-cyan-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="py-4 text-gray-600">Tak! Oferujemy kompleksową pomoc w uzyskaniu dotacji - od przygotowania dokumentacji po złożenie wniosku i kontakt z WFOŚiGW.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left font-bold flex justify-between items-center hover:bg-gray-100 transition">
+                        <span>Czy dotacja jest refundacją czy avansem?</span>
+                        <i class="fas fa-chevron-down faq-icon text-cyan-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="py-4 text-gray-600">Mój Prąd to refundacja - najpierw płacisz za instalację, potem otrzymujesz zwrot. Czyste Powietrze może być wypłacone częściowo z góry (do 50%).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-2xl overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left font-bold flex justify-between items-center hover:bg-gray-100 transition">
+                        <span>Do kiedy trzeba złożyć wniosek?</span>
+                        <i class="fas fa-chevron-down faq-icon text-cyan-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 bg-white">
+                        <p class="py-4 text-gray-600">Programy są dostępne do wyczerpania środków. Zalecamy składanie wniosków jak najszybciej po realizacji inwestycji.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact-form" class="py-20 gradient-azure text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Skontaktuj się z nami</h2>
+                <p class="text-xl text-cyan-50">Pomożemy uzyskać maksymalne dofinansowanie</p>
+            </div>
+
+            <form class="bg-white/10 backdrop-blur-md rounded-3xl p-8">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <input type="text" placeholder="Imię i nazwisko" class="px-4 py-3 rounded-xl bg-white/90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-cyan-300">
+                    <input type="tel" placeholder="Telefon" class="px-4 py-3 rounded-xl bg-white/90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-cyan-300">
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <input type="email" placeholder="Email" class="px-4 py-3 rounded-xl bg-white/90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-cyan-300">
+                    <select class="px-4 py-3 rounded-xl bg-white/90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-cyan-300">
+                        <option>Interesujący program</option>
+                        <option>Mój Prąd 7.0</option>
+                        <option>Czyste Powietrze</option>
+                        <option>Ulga Termomodernizacyjna</option>
+                        <option>Wszystkie programy</option>
+                    </select>
+                </div>
+                <textarea rows="4" placeholder="Wiadomość" class="w-full px-4 py-3 rounded-xl bg-white/90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-cyan-300 mb-6"></textarea>
+                <button type="submit" class="w-full bg-white text-cyan-600 px-6 py-4 rounded-xl font-bold hover:shadow-2xl transition text-lg">
+                    <i class="fas fa-paper-plane mr-2"></i>Wyślij zapytanie
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-azure-reverse text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-solar-panel text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">Azure Solar</span>
+                    </div>
+                    <p class="text-cyan-100">Twój partner w odnawialnych źródłach energii</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Usługi</h4>
+                    <ul class="space-y-2 text-cyan-100">
+                        <li><a href="fotowoltaika.html" class="hover:text-white transition">Fotowoltaika</a></li>
+                        <li><a href="pompy-ciepla.html" class="hover:text-white transition">Pompy Ciepła</a></li>
+                        <li><a href="magazyny-energii.html" class="hover:text-white transition">Magazyny Energii</a></li>
+                        <li><a href="klimatyzacja.html" class="hover:text-white transition">Klimatyzacja</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Firma</h4>
+                    <ul class="space-y-2 text-cyan-100">
+                        <li><a href="o-nas.html" class="hover:text-white transition">O nas</a></li>
+                        <li><a href="realizacje.html" class="hover:text-white transition">Realizacje</a></li>
+                        <li><a href="cennik.html" class="hover:text-white transition">Cennik</a></li>
+                        <li><a href="kontakt.html" class="hover:text-white transition">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-cyan-100">
+                        <li><i class="fas fa-phone mr-2"></i> +48 123 456 789</li>
+                        <li><i class="fas fa-envelope mr-2"></i> kontakt@azure-solar.pl</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Warszawa, Polska</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-8 text-center text-cyan-100">
+                <p>&copy; 2024 Azure Solar. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn?.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const wasActive = faqItem.classList.contains('active');
+                
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                if (!wasActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Income calculator
+        function calculateLevel() {
+            const persons = parseInt(document.getElementById('persons').value);
+            const income = parseInt(document.getElementById('income').value);
+            const incomePerPerson = income / 12 / persons;
+            
+            let level, maxGrant;
+            if (incomePerPerson <= 1050) {
+                level = 'Najwyższy';
+                maxGrant = '69 000 zł';
+            } else if (incomePerPerson <= 1400) {
+                level = 'Podwyższony';
+                maxGrant = '56 000 zł';
+            } else {
+                level = 'Podstawowy';
+                maxGrant = '37 000 zł';
+            }
+            
+            document.getElementById('level-name').textContent = level;
+            document.getElementById('max-grant').textContent = maxGrant;
+            document.getElementById('level-result').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>

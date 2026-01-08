@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "name": "azure-solar",
+  "builds": [
+    {
+      "src": "static/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/",
+      "dest": "/static/index.html"
+    }
+  ],
+  "regions": ["fra1"],
+  "public": true
+}

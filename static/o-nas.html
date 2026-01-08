@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Azure Solar - O firmie. Lider w branży fotowoltaicznej z 15-letnim doświadczeniem.">
+    <title>O Nas - Azure Solar | Profesjonalna Fotowoltaika</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'azure-blue': '#0EA5E9',
+                        'azure-cyan': '#06B6D4',
+                        'azure-green': '#10B981',
+                        'azure-emerald': '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; }
+        .gradient-azure {
+            background: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%);
+        }
+        .gradient-azure-reverse {
+            background: linear-gradient(135deg, #10B981 0%, #0EA5E9 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <i class="fas fa-solar-panel text-4xl text-blue-500"></i>
+                    <div>
+                        <div class="text-2xl font-bold text-gray-900">Azure Solar</div>
+                        <div class="text-xs text-gray-500">Energia przyszłości</div>
+                    </div>
+                </a>
+                
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-500 transition-colors font-medium">Start</a>
+                    <a href="o-nas.html" class="text-blue-500 font-semibold">O nas</a>
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-blue-500 transition-colors font-medium flex items-center">
+                            Usługi <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute hidden group-hover:block pt-2 w-64">
+                            <div class="bg-white rounded-lg shadow-xl border p-2">
+                                <a href="fotowoltaika.html" class="block px-4 py-3 hover:bg-blue-50 rounded-lg transition-colors">
+                                    <i class="fas fa-solar-panel text-blue-500 mr-2"></i> Fotowoltaika
+                                </a>
+                                <a href="pompy-ciepla.html" class="block px-4 py-3 hover:bg-blue-50 rounded-lg transition-colors">
+                                    <i class="fas fa-temperature-half text-blue-500 mr-2"></i> Pompy ciepła
+                                </a>
+                                <a href="magazyny-energii.html" class="block px-4 py-3 hover:bg-blue-50 rounded-lg transition-colors">
+                                    <i class="fas fa-battery-full text-green-500 mr-2"></i> Magazyny energii
+                                </a>
+                                <a href="klimatyzacja.html" class="block px-4 py-3 hover:bg-blue-50 rounded-lg transition-colors">
+                                    <i class="fas fa-wind text-blue-500 mr-2"></i> Klimatyzacja
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="realizacje.html" class="text-gray-700 hover:text-blue-500 transition-colors font-medium">Realizacje</a>
+                    <a href="blog.html" class="text-gray-700 hover:text-blue-500 transition-colors font-medium">Blog</a>
+                    <a href="dotacje.html" class="text-gray-700 hover:text-blue-500 transition-colors font-medium">Dotacje</a>
+                    <a href="kontakt.html" class="text-gray-700 hover:text-blue-500 transition-colors font-medium">Kontakt</a>
+                    <a href="index.html#calculator" class="gradient-azure text-white px-6 py-3 rounded-lg font-semibold hover:shadow-xl transition-all">
+                        Kalkulator
+                    </a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="lg:hidden text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 gradient-azure">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                    O Azure Solar
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90">
+                    15 lat doświadczenia w branży odnawialnych źródeł energii
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                
+                <!-- Misja -->
+                <div class="mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Nasza Misja</h2>
+                    <p class="text-lg text-gray-600 mb-4">
+                        Jesteśmy firmą specjalizującą się w projektowaniu, dostawie i montażu systemów odnawialnych źródeł energii. 
+                        Naszą misją jest umożliwienie każdemu gospodarstwu domowemu i firmie przejścia na czystą, odnawialną energię.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        Wierzymy, że przyszłość energetyki to energia słoneczna, pompy ciepła i inteligentne magazynowanie energii. 
+                        Pomagamy naszym klientom osiągnąć niezależność energetyczną i znacząco obniżyć koszty eksploatacji.
+                    </p>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid md:grid-cols-4 gap-8 mb-16">
+                    <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-green-50 rounded-xl">
+                        <div class="text-5xl font-bold text-blue-600 mb-2">500+</div>
+                        <div class="text-gray-700 font-medium">Zrealizowanych projektów</div>
+                    </div>
+                    <div class="text-center p-6 bg-gradient-to-br from-green-50 to-blue-50 rounded-xl">
+                        <div class="text-5xl font-bold text-green-600 mb-2">15+</div>
+                        <div class="text-gray-700 font-medium">Lat doświadczenia</div>
+                    </div>
+                    <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-green-50 rounded-xl">
+                        <div class="text-5xl font-bold text-blue-600 mb-2">98%</div>
+                        <div class="text-gray-700 font-medium">Zadowolonych klientów</div>
+                    </div>
+                    <div class="text-center p-6 bg-gradient-to-br from-green-50 to-blue-50 rounded-xl">
+                        <div class="text-5xl font-bold text-green-600 mb-2">24/7</div>
+                        <div class="text-gray-700 font-medium">Wsparcie techniczne</div>
+                    </div>
+                </div>
+
+                <!-- Team -->
+                <div class="mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-8">Nasz Zespół</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-400 to-green-400 flex items-center justify-center">
+                                <i class="fas fa-user text-white text-5xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Jan Kowalski</h3>
+                            <p class="text-blue-600 font-medium mb-2">CEO & Founder</p>
+                            <p class="text-gray-600 text-sm">15 lat w branży OZE</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-400 to-blue-400 flex items-center justify-center">
+                                <i class="fas fa-user text-white text-5xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Anna Nowak</h3>
+                            <p class="text-green-600 font-medium mb-2">Kierownik Techniczny</p>
+                            <p class="text-gray-600 text-sm">Certyfikowany instalator</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-400 to-green-400 flex items-center justify-center">
+                                <i class="fas fa-user text-white text-5xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Piotr Wiśniewski</h3>
+                            <p class="text-blue-600 font-medium mb-2">Specjalista ds. Dotacji</p>
+                            <p class="text-gray-600 text-sm">Pomoc w finansowaniu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certyfikaty -->
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-8">Certyfikaty i Uprawnienia</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex items-start space-x-4 p-6 bg-gradient-to-br from-blue-50 to-white rounded-xl border border-blue-100">
+                            <i class="fas fa-certificate text-3xl text-blue-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-900 mb-2">Certyfikat SEP</h3>
+                                <p class="text-gray-600">Uprawnienia do pracy przy instalacjach elektrycznych</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 p-6 bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-100">
+                            <i class="fas fa-award text-3xl text-green-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-900 mb-2">ISO 9001</h3>
+                                <p class="text-gray-600">System zarządzania jakością</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 p-6 bg-gradient-to-br from-blue-50 to-white rounded-xl border border-blue-100">
+                            <i class="fas fa-shield-alt text-3xl text-blue-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-900 mb-2">Ubezpieczenie OC</h3>
+                                <p class="text-gray-600">Pełna ochrona realizowanych projektów</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 p-6 bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-100">
+                            <i class="fas fa-handshake text-3xl text-green-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-900 mb-2">Autoryzacje producentów</h3>
+                                <p class="text-gray-600">Oficjalny partner wiodących marek</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 gradient-azure-reverse">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">
+                Rozpocznij swoją drogę do energii odnawialnej
+            </h2>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Skontaktuj się z nami już dziś i otrzymaj bezpłatną wycenę
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="kontakt.html" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl transition-all hover:scale-105">
+                    <i class="fas fa-phone mr-2"></i>
+                    Skontaktuj się
+                </a>
+                <a href="index.html#calculator" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition-all">
+                    <i class="fas fa-calculator mr-2"></i>
+                    Kalkulator
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fas fa-solar-panel text-3xl text-blue-400"></i>
+                        <div class="text-xl font-bold">Azure Solar</div>
+                    </div>
+                    <p class="text-gray-400 mb-4">Profesjonalne rozwiązania OZE</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors"><i class="fab fa-facebook text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors"><i class="fab fa-linkedin text-2xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Usługi</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="fotowoltaika.html" class="hover:text-blue-400 transition-colors">Fotowoltaika</a></li>
+                        <li><a href="pompy-ciepla.html" class="hover:text-blue-400 transition-colors">Pompy ciepła</a></li>
+                        <li><a href="magazyny-energii.html" class="hover:text-blue-400 transition-colors">Magazyny energii</a></li>
+                        <li><a href="klimatyzacja.html" class="hover:text-blue-400 transition-colors">Klimatyzacja</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Firma</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="o-nas.html" class="hover:text-blue-400 transition-colors">O nas</a></li>
+                        <li><a href="realizacje.html" class="hover:text-blue-400 transition-colors">Realizacje</a></li>
+                        <li><a href="blog.html" class="hover:text-blue-400 transition-colors">Blog</a></li>
+                        <li><a href="dotacje.html" class="hover:text-blue-400 transition-colors">Dotacje</a></li>
+                        <li><a href="kontakt.html" class="hover:text-blue-400 transition-colors">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-phone text-blue-400 mr-2"></i> +48 123 456 789</li>
+                        <li><i class="fas fa-envelope text-blue-400 mr-2"></i> kontakt@azure-solar.pl</li>
+                        <li><i class="fas fa-map-marker-alt text-blue-400 mr-2"></i> ul. Słoneczna 1, Warszawa</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Azure Solar. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            alert('Mobile menu - TODO');
+        });
+    </script>
+
+</body>
+</html>
