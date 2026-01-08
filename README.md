@@ -1,4 +1,4 @@
-# ☀️ Azure Solar - Platforma Fotowoltaiczna
+# ☀️ CEIRG - Platforma Fotowoltaiczna
 
 Kompleksowa aplikacja dla firmy zajmującej się fotowoltaiką z panelem klienta, panelem administracyjnym i formularzami kontaktowymi.
 
@@ -7,6 +7,9 @@ Kompleksowa aplikacja dla firmy zajmującej się fotowoltaiką z panelem klienta
 ### 🌐 **LIVE DEMO:** https://azure-sold.vercel.app
 
 **Strona statyczna jest już wdrożona i dostępna online!**
+
+> **🎨 Nowa marka:** CEIRG (od stycznia 2026)  
+> Logo: Latarnia morska jako symbol "I" - przewodnik w świecie OZE
 
 ### Automatyczna instalacja (rekomendowane):
 
