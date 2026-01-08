@@ -1,6 +1,6 @@
-# ☀️ CEIRG - Platforma Fotowoltaiczna
+# ☀️ CEIRG - Energia dla Przyszłości
 
-Kompleksowa aplikacja dla firmy zajmującej się fotowoltaiką z panelem klienta, panelem administracyjnym i formularzami kontaktowymi.
+Kompleksowa platforma dla firmy zajmującej się odnawialnymi źródłami energii (OZE) z panelem klienta, panelem administracyjnym i pełną obsługą marketingową.
 
 ## ⚡ Szybki Start
 
@@ -8,8 +8,19 @@ Kompleksowa aplikacja dla firmy zajmującej się fotowoltaiką z panelem klienta
 
 **Strona statyczna jest już wdrożona i dostępna online!**
 
-> **🎨 Nowa marka:** CEIRG (od stycznia 2026)  
-> Logo: Latarnia morska jako symbol "I" - przewodnik w świecie OZE
+> **🎨 Brand:** CEIRG (Clean Energy Innovation Renewable Generation)  
+> Logo: Latarnia morska jako przewodnik w świecie OZE  
+> **🎬 Nowa landing page:** Video hero + slider ze zdjęciami + duże logo
+
+### Najnowsze Aktualizacje (8.01.2026):
+- ✅ **Video Hero Background** - Film ceirg.mp4 jako tło hero section
+- ✅ **Prominent Logo** - Powiększone logo 128×128px z efektami
+- ✅ **Image Slider** - 5 slajdów z realizacjami (auto-play 5s)
+- ✅ **Marketing Materials** - Kompletny przewodnik (30 400 PLN)
+- ✅ **SEO Strategy** - Plan SEO z 50+ słowami kluczowymi
+- ✅ **Social Media Strategy** - Strategia 5 platform (5000 PLN/mies.)
+
+📖 Pełna dokumentacja: [LANDING_PAGE_UPGRADE.md](./LANDING_PAGE_UPGRADE.md)
 
 ### Automatyczna instalacja (rekomendowane):
 
@@ -44,7 +55,7 @@ make start              # Make (zalecane)
 **NOWE!** Kompletna, gotowa do wdrożenia strona statyczna w `/static/`:
 
 #### Strony Publiczne (13):
-- 🏠 **index.html** - Landing page z hero section, 4 karty usług, kalkulatorem
+- 🏠 **index.html** - Landing page z **VIDEO HERO** (ceirg.mp4), **IMAGE SLIDER** (5 realizacji), duże logo 128×128px, 12 kafelków nawigacyjnych
 - 📖 **o-nas.html** - Informacje o firmie, zespół 3 osób, certyfikaty, statystyki
 - ☀️ **fotowoltaika.html** - Usługa PV z 3 pakietami (5/10/15 kW)
 - 🔥 **pompy-ciepla.html** - Pompy ciepła z 3 pakietami + dotacje (do 69k PLN)
