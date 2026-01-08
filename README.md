@@ -4,6 +4,10 @@ Kompleksowa aplikacja dla firmy zajmującej się fotowoltaiką z panelem klienta
 
 ## ⚡ Szybki Start
 
+### 🌐 **LIVE DEMO:** https://azure-sold.vercel.app
+
+**Strona statyczna jest już wdrożona i dostępna online!**
+
 ### Automatyczna instalacja (rekomendowane):
 
 ```bash
