@@ -307,24 +307,119 @@
         </div>
     </header>
 
-    <!-- Hero Section with Video Background - Split Layout -->
-    <section class="relative overflow-hidden min-h-screen flex items-center justify-center">
-        <!-- Video Background - Full Screen -->
-        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
-            <source src="grok-video-bf451ce9-4982-4707-8255-4b8922bd0c75.mp4" type="video/mp4">
-            <!-- Fallback to old video if new one doesn't load -->
-            <source src="ceirg.mp4" type="video/mp4">
-        </video>
-        
-        <!-- Gradient Overlays for Better Text Readability -->
-        <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-transparent"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/60"></div>
-        
+    <!-- Hero Section - Clean Split Layout (No Overlap) -->
+    <section class="relative min-h-screen flex items-center bg-gradient-to-br from-gray-50 via-blue-50 to-green-50">
         <!-- Content Container - Split into 2 Columns on Desktop -->
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 
-                <!-- LEFT SIDE - Text Content -->
+                <!-- LEFT SIDE - Text Content (NO Video Behind) -->
+                <div class="text-left space-y-8">
+                    <!-- Logo Badge -->
+                    <div class="inline-flex items-center bg-white rounded-2xl p-4 shadow-xl border-2 border-green-400">
+                        <div class="relative group">
+                            <!-- Glow Effect -->
+                            <div class="absolute -inset-1 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-400 rounded-xl blur opacity-75 group-hover:opacity-100 animate-pulse-slow"></div>
+                            
+                            <!-- Logo Container -->
+                            <div class="relative w-16 h-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl flex items-center justify-center border-2 border-green-400">
+                                <!-- Inner White Circle for Logo -->
+                                <div class="w-14 h-14 bg-white rounded-lg flex items-center justify-center">
+                                    <svg viewBox="0 0 40 40" class="w-12 h-12">
+                                        <!-- Lighthouse simplified icon -->
+                                        <rect x="17" y="8" width="6" height="24" fill="#10B981" rx="1"/>
+                                        <circle cx="20" cy="6" r="3" fill="#10B981"/>
+                                        <path d="M 15 30 L 25 30 L 23 35 L 17 35 Z" fill="#059669"/>
+                                        <line x1="16" y1="14" x2="24" y2="14" stroke="white" stroke-width="1"/>
+                                        <line x1="16" y1="18" x2="24" y2="18" stroke="white" stroke-width="1"/>
+                                        <line x1="16" y1="22" x2="24" y2="22" stroke="white" stroke-width="1"/>
+                                        <line x1="16" y1="26" x2="24" y2="26" stroke="white" stroke-width="1"/>
+                                        
+                                        <!-- Light Rays Animation -->
+                                        <g class="animate-pulse" opacity="0.6">
+                                            <line x1="20" y1="6" x2="20" y2="2" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+                                            <line x1="26" y1="9" x2="29" y2="6" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+                                            <line x1="14" y1="9" x2="11" y2="6" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="ml-4">
+                            <h1 class="text-3xl font-bold text-gray-900">CEIRG</h1>
+                            <p class="text-green-600 font-semibold text-sm">Est. 2011 • 15 lat</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Main Heading -->
+                    <div>
+                        <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 leading-tight">
+                            Energia dla<br/>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500">
+                                Przyszłości
+                            </span>
+                        </h2>
+                        
+                        <!-- Subtitle -->
+                        <p class="text-xl md:text-2xl text-gray-600 leading-relaxed">
+                            Profesjonalne instalacje fotowoltaiczne, pompy ciepła i magazyny energii. 
+                            <strong class="text-green-600">500+ realizacji</strong> w całej Polsce.
+                        </p>
+                    </div>
+                    
+                    <!-- Key Features Pills -->
+                    <div class="flex flex-wrap gap-3">
+                        <div class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
+                            ☀️ Fotowoltaika
+                        </div>
+                        <div class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
+                            🔥 Pompy Ciepła
+                        </div>
+                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
+                            🔋 Magazyny Energii
+                        </div>
+                        <div class="bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
+                            ❄️ Klimatyzacja
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="kalkulator.html" class="group relative inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-lg shadow-2xl transition-all transform hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 rounded-xl"></div>
+                            <span class="relative text-white flex items-center gap-2">
+                                🧮 Oblicz Oszczędności
+                                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                            </span>
+                        </a>
+                        <a href="kontakt.html" class="bg-white hover:bg-gray-50 text-gray-900 px-8 py-4 rounded-xl font-bold text-lg shadow-xl border-2 border-gray-300 transition-all transform hover:scale-105 flex items-center justify-center gap-2">
+                            📞 Bezpłatna Konsultacja
+                        </a>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="flex flex-wrap gap-8 pt-4">
+                        <div>
+                            <div class="text-4xl font-bold text-green-600">500+</div>
+                            <div class="text-sm text-gray-600">Realizacji</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold text-green-600">15</div>
+                            <div class="text-sm text-gray-600">Lat Doświadczenia</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold text-green-600">98%</div>
+                            <div class="text-sm text-gray-600">Zadowolonych</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold text-green-600">24/7</div>
+                            <div class="text-sm text-gray-600">Wsparcie</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- RIGHT SIDE - Interactive Video Player (SEPARATE, NO OVERLAP) -->
                 <div class="text-left lg:pr-12">
                     <!-- Logo Badge -->
                     <div class="mb-8 inline-flex items-center">
@@ -434,49 +529,76 @@
                     </div>
                 </div>
                 
-                <!-- RIGHT SIDE - Video Focus Window (Optional Decorative Frame) -->
-                <div class="hidden lg:flex items-center justify-center">
-                    <div class="relative">
-                        <!-- Decorative Frame Around Video -->
-                        <div class="absolute -inset-4 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-400 rounded-3xl blur-2xl opacity-30 animate-pulse-slow"></div>
+                <!-- RIGHT SIDE - Interactive Video Player (SEPARATE, NO OVERLAP) -->
+                <div class="relative">
+                    <!-- Video Container with Controls -->
+                    <div class="relative bg-white rounded-3xl shadow-2xl p-4 border-4 border-green-400">
+                        <!-- Decorative Glow -->
+                        <div class="absolute -inset-2 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-400 rounded-3xl blur-xl opacity-20"></div>
                         
-                        <!-- Stats Cards Overlay on Video -->
-                        <div class="relative space-y-4">
-                            <!-- Card 1: Dotacje -->
-                            <div class="bg-gradient-to-br from-green-500/95 to-emerald-600/95 backdrop-blur-md p-6 rounded-2xl shadow-2xl border-2 border-white/20 transform hover:scale-105 transition-transform">
-                                <div class="flex items-center gap-4">
-                                    <div class="text-5xl">💰</div>
-                                    <div>
-                                        <div class="text-3xl font-bold text-white">69 000 zł</div>
-                                        <div class="text-white/90 font-semibold">Dotacje 2024</div>
-                                        <div class="text-xs text-white/70">Mój Prąd + Czyste Powietrze</div>
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Video Player -->
+                        <div class="relative rounded-2xl overflow-hidden">
+                            <video 
+                                id="heroVideo" 
+                                class="w-full h-auto rounded-2xl" 
+                                poster="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&h=600&fit=crop"
+                                controls
+                                preload="metadata">
+                                <source src="grok-video-bf451ce9-4982-4707-8255-4b8922bd0c75.mp4" type="video/mp4">
+                                <source src="ceirg.mp4" type="video/mp4">
+                                Your browser doesn't support video.
+                            </video>
                             
-                            <!-- Card 2: Oszczędności -->
-                            <div class="bg-gradient-to-br from-blue-500/95 to-cyan-600/95 backdrop-blur-md p-6 rounded-2xl shadow-2xl border-2 border-white/20 transform hover:scale-105 transition-transform">
-                                <div class="flex items-center gap-4">
-                                    <div class="text-5xl">📊</div>
-                                    <div>
-                                        <div class="text-3xl font-bold text-white">90%</div>
-                                        <div class="text-white/90 font-semibold">Oszczędności</div>
-                                        <div class="text-xs text-white/70">Rachunki za prąd ↓</div>
-                                    </div>
+                            <!-- Play Button Overlay (shows before playing) -->
+                            <div id="playOverlay" class="absolute inset-0 flex items-center justify-center bg-black/40 cursor-pointer transition-opacity hover:bg-black/50" onclick="document.getElementById('heroVideo').play(); this.style.display='none';">
+                                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl transform hover:scale-110 transition-transform">
+                                    <i class="fas fa-play text-green-600 text-3xl ml-1"></i>
                                 </div>
                             </div>
-                            
-                            <!-- Card 3: ROI -->
-                            <div class="bg-gradient-to-br from-purple-500/95 to-pink-600/95 backdrop-blur-md p-6 rounded-2xl shadow-2xl border-2 border-white/20 transform hover:scale-105 transition-transform">
-                                <div class="flex items-center gap-4">
-                                    <div class="text-5xl">⚡</div>
-                                    <div>
-                                        <div class="text-3xl font-bold text-white">6-8 lat</div>
-                                        <div class="text-white/90 font-semibold">Zwrot Inwestycji</div>
-                                        <div class="text-xs text-white/70">ROI gwarantowane</div>
-                                    </div>
+                        </div>
+                        
+                        <!-- Video Info Bar -->
+                        <div class="mt-4 flex items-center justify-between px-2">
+                            <div>
+                                <p class="text-sm font-bold text-gray-900">🎬 Zobacz nasze realizacje</p>
+                                <p class="text-xs text-gray-600">500+ projektów w całej Polsce</p>
+                            </div>
+                            <button onclick="toggleFullscreen()" class="text-gray-600 hover:text-green-600 transition-colors">
+                                <i class="fas fa-expand text-xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Stats Cards -->
+                    <div class="hidden xl:block absolute -bottom-8 -left-8 space-y-4">
+                        <!-- Card 1: Dotacje -->
+                        <div class="bg-gradient-to-br from-green-500 to-emerald-600 p-4 rounded-xl shadow-2xl border-2 border-white transform hover:scale-105 transition-transform cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <div class="text-3xl">�</div>
+                                <div>
+                                    <div class="text-2xl font-bold text-white">69k zł</div>
+                                    <div class="text-xs text-white/90">Dotacje 2024</div>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <!-- Card 2: ROI -->
+                        <div class="bg-gradient-to-br from-blue-500 to-cyan-600 p-4 rounded-xl shadow-2xl border-2 border-white transform hover:scale-105 transition-transform cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <div class="text-3xl">⚡</div>
+                                <div>
+                                    <div class="text-2xl font-bold text-white">6-8 lat</div>
+                                    <div class="text-xs text-white/90">Zwrot ROI</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Badge -->
+                    <div class="hidden xl:block absolute -top-4 -right-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full shadow-2xl border-2 border-white transform rotate-12 hover:rotate-0 transition-transform cursor-pointer">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">90%</div>
+                            <div class="text-xs">Oszczędności</div>
                         </div>
                     </div>
                 </div>
@@ -485,8 +607,8 @@
         </div>
         
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-            <div class="animate-bounce text-white/70 flex flex-col items-center gap-2">
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <div class="animate-bounce text-gray-600 flex flex-col items-center gap-2">
                 <span class="text-sm font-semibold">Przewiń w dół</span>
                 <i class="fas fa-chevron-down text-2xl"></i>
             </div>
@@ -922,6 +1044,52 @@
         
         // Initialize
         updateSlider();
+    </script>
+    
+    <!-- Interactive Video Player Script -->
+    <script>
+        const heroVideo = document.getElementById('heroVideo');
+        const playOverlay = document.getElementById('playOverlay');
+        
+        // Hide overlay when video starts playing
+        heroVideo.addEventListener('play', () => {
+            playOverlay.style.display = 'none';
+        });
+        
+        // Show overlay when video is paused
+        heroVideo.addEventListener('pause', () => {
+            if (!heroVideo.ended) {
+                playOverlay.style.display = 'flex';
+            }
+        });
+        
+        // Hide overlay when video ends
+        heroVideo.addEventListener('ended', () => {
+            playOverlay.style.display = 'flex';
+        });
+        
+        // Fullscreen toggle
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                heroVideo.requestFullscreen().catch(err => {
+                    console.log(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+        
+        // Auto-hide controls after 3 seconds of inactivity
+        let controlsTimer;
+        heroVideo.addEventListener('mousemove', () => {
+            heroVideo.controls = true;
+            clearTimeout(controlsTimer);
+            controlsTimer = setTimeout(() => {
+                if (!heroVideo.paused) {
+                    // Keep controls visible while paused
+                }
+            }, 3000);
+        });
     </script>
 
 </body>
