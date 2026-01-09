@@ -392,6 +392,56 @@
         .animate-pulse-slow {
             animation: pulse 3s ease-in-out infinite;
         }
+        
+        /* Dark Theme Styles */
+        body.dark-theme {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%) !important;
+            animation: none !important;
+            filter: none !important;
+        }
+        
+        body.dark-theme .hero-sunrise {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%) !important;
+        }
+        
+        body.dark-theme h1,
+        body.dark-theme h2,
+        body.dark-theme h3,
+        body.dark-theme p:not(.text-white):not([class*="text-"]) {
+            color: #e2e8f0 !important;
+        }
+        
+        body.dark-theme .bg-white {
+            background: rgba(30, 41, 59, 0.8) !important;
+            border-color: #0ea5e9 !important;
+        }
+        
+        body.dark-theme header {
+            background: rgba(15, 23, 42, 0.95) !important;
+            border-bottom: 2px solid #0ea5e9;
+        }
+        
+        body.dark-theme .text-gray-900 {
+            color: #f1f5f9 !important;
+        }
+        
+        body.dark-theme .text-gray-600,
+        body.dark-theme .text-gray-700 {
+            color: #cbd5e1 !important;
+        }
+        
+        body.dark-theme .border-gray-200 {
+            border-color: #334155 !important;
+        }
+        
+        body.dark-theme .shadow-xl {
+            box-shadow: 0 20px 50px rgba(14, 165, 233, 0.3) !important;
+        }
+        
+        /* Theme Transition */
+        body {
+            transition: background 0.5s ease-in-out, filter 0.5s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-gray-50 via-blue-50 to-green-50 min-h-screen">
@@ -422,6 +472,11 @@
                 
                 <!-- Quick Actions -->
                 <div class="flex items-center space-x-4">
+                    <!-- Theme Toggle Button -->
+                    <button id="themeToggle" class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-gray-800 to-black hover:from-gray-700 hover:to-gray-900 text-white rounded-xl shadow-lg transition-all transform hover:scale-110 border-2 border-gray-700" title="Toggle Dark/Light Theme">
+                        <i class="fas fa-moon text-xl" id="themeIcon"></i>
+                    </button>
+                    
                     <a href="logowanie.html" class="hidden md:flex items-center space-x-2 bg-white hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg border border-gray-200 transition-all">
                         <i class="fas fa-user"></i>
                         <span class="font-medium">Login</span>
@@ -1061,6 +1116,46 @@
         
         // Initialize
         updateSlider();
+    </script>
+    
+    <!-- Theme Toggle Script -->
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+        
+        // Check for saved theme preference or default to light
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        // Apply saved theme on load
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-theme');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            themeToggle.classList.remove('from-gray-800', 'to-black', 'border-gray-700');
+            themeToggle.classList.add('from-sky-400', 'to-blue-500', 'border-sky-300');
+        }
+        
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            
+            if (body.classList.contains('dark-theme')) {
+                // Switch to dark theme
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                themeToggle.classList.remove('from-gray-800', 'to-black', 'border-gray-700');
+                themeToggle.classList.add('from-sky-400', 'to-blue-500', 'border-sky-300');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Switch to light theme
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                themeToggle.classList.remove('from-sky-400', 'to-blue-500', 'border-sky-300');
+                themeToggle.classList.add('from-gray-800', 'to-black', 'border-gray-700');
+                localStorage.setItem('theme', 'light');
+            }
+        });
     </script>
     
     <!-- Interactive Video Player Script -->
