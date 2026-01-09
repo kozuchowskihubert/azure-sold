@@ -7,6 +7,11 @@
     <meta name="keywords" content="fotowoltaika, panele słoneczne, energia słoneczna, instalacje PV, dotacje fotowoltaika, CEIRG">
     <title>CEIRG - Portal OZE | Dashboard</title>
     
+    <!-- Modern Fonts (haos.fm inspired) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <!-- Schema.org Structured Data for SEO -->
     <script type="application/ld+json">
     {
@@ -172,14 +177,19 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         * {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
         }
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
         }
         html {
             scroll-behavior: smooth;
@@ -311,47 +321,114 @@
             }
         }
         
+        /* Premium Gradients - haos.fm inspired */
         .gradient-azure {
-            background: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%);
+            background: linear-gradient(135deg, #0EA5E9 0%, #06B6D4 50%, #10B981 100%);
+            box-shadow: 0 8px 32px rgba(14, 165, 233, 0.3);
         }
         .gradient-solar {
-            background: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+            background: linear-gradient(135deg, #F59E0B 0%, #F97316 50%, #EF4444 100%);
+            box-shadow: 0 8px 32px rgba(245, 158, 11, 0.3);
         }
         .gradient-purple {
-            background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+            background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 50%, #EC4899 100%);
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
         }
         .gradient-teal {
-            background: linear-gradient(135deg, #06B6D4 0%, #14B8A6 100%);
+            background: linear-gradient(135deg, #06B6D4 0%, #0891B2 50%, #14B8A6 100%);
+            box-shadow: 0 8px 32px rgba(6, 182, 212, 0.3);
         }
         .gradient-emerald {
-            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            background: linear-gradient(135deg, #10B981 0%, #059669 50%, #047857 100%);
+            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);
         }
         .gradient-indigo {
-            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+            background: linear-gradient(135deg, #6366F1 0%, #7C3AED 50%, #8B5CF6 100%);
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
         }
         
+        /* Premium Tile Styles - haos.fm inspired */
         .tile {
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .tile::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
+            left: -100%;
             width: 100%;
             height: 100%;
-            background: rgba(255,255,255,0.1);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
         }
         .tile:hover::before {
+            left: 100%;
+        }
+        .tile::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .tile:hover::after {
             opacity: 1;
         }
         .tile:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Premium Background - haos.fm style */
+        body:not(.dark-theme) {
+            background: 
+                radial-gradient(ellipse at top left, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at top right, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, #f8fafc 0%, #e0f2fe 25%, #dbeafe 50%, #e0f2fe 75%, #f8fafc 100%);
+            background-attachment: fixed;
+        }
+        
+        /* Glass Morphism Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Animated Background Pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            animation: bgShift 20s ease infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        @keyframes bgShift {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1) rotate(5deg);
+                opacity: 0.8;
+            }
         }
         
         @keyframes float {
@@ -419,6 +496,7 @@
         body.dark-theme header {
             background: rgba(15, 23, 42, 0.95) !important;
             border-bottom: 2px solid #0ea5e9;
+            backdrop-filter: blur(20px);
         }
         
         body.dark-theme .text-gray-900 {
@@ -438,16 +516,40 @@
             box-shadow: 0 20px 50px rgba(14, 165, 233, 0.3) !important;
         }
         
+        body.dark-theme .tile {
+            border-color: rgba(14, 165, 233, 0.3);
+            background: rgba(15, 23, 42, 0.6);
+        }
+        
+        body.dark-theme .tile:hover {
+            border-color: rgba(14, 165, 233, 0.6);
+            box-shadow: 0 25px 50px rgba(14, 165, 233, 0.4), 0 0 0 1px rgba(14, 165, 233, 0.3);
+        }
+        
+        body.dark-theme::before {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+        }
+        
         /* Theme Transition */
         body {
             transition: background 0.5s ease-in-out, filter 0.5s ease-in-out;
+            position: relative;
+        }
+        
+        /* All content above background pattern */
+        body > * {
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-gray-50 via-blue-50 to-green-50 min-h-screen">
+<body class="min-h-screen" style="background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 30%, #dbeafe 60%, #d1fae5 100%);">
     
     <!-- Header/Navigation Bar -->
-    <header class="bg-white/80 backdrop-blur-lg shadow-lg sticky top-0 z-50">
+    <header class="glass shadow-lg sticky top-0 z-50" style="background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px);">
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
@@ -465,8 +567,8 @@
                         </svg>
                     </div>
                     <div>
-                        <h1 class="text-2xl font-bold text-gray-900">CEIRG</h1>
-                        <p class="text-xs text-gray-500">Portal OZE</p>
+                        <h1 class="text-2xl font-bold text-gray-900" style="font-family: 'Outfit', sans-serif; letter-spacing: -0.03em;">CEIRG</h1>
+                        <p class="text-xs text-gray-500 mono" style="font-family: 'JetBrains Mono', monospace; letter-spacing: 0.05em;">PORTAL OZE</p>
                     </div>
                 </div>
                 
@@ -536,33 +638,33 @@
                     
                     <!-- Main Heading -->
                     <div>
-                        <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 leading-tight">
+                        <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 leading-tight" style="font-family: 'Outfit', sans-serif; font-weight: 900; letter-spacing: -0.05em; line-height: 1.05;">
                             Energia dla<br/>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500" style="text-shadow: 0 0 80px rgba(16, 185, 129, 0.4);">
                                 Przyszłości
                             </span>
                         </h2>
                         
                         <!-- Subtitle -->
-                        <p class="text-xl md:text-2xl text-gray-600 leading-relaxed">
+                        <p class="text-xl md:text-2xl text-gray-600 leading-relaxed" style="font-family: 'Space Grotesk', sans-serif; font-weight: 400;">
                             Profesjonalne instalacje fotowoltaiczne, pompy ciepła i magazyny energii. 
-                            <strong class="text-green-600">500+ realizacji</strong> w całej Polsce.
+                            <strong class="text-green-600 mono" style="font-family: 'JetBrains Mono', monospace; font-weight: 700;">500+ REALIZACJI</strong> w całej Polsce.
                         </p>
                     </div>
                     
                     <!-- Key Features Pills -->
                     <div class="flex flex-wrap gap-3 fade-in-sunrise-delay-1">
-                        <div class="pill-animate bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
-                            ☀️ Fotowoltaika
+                        <div class="pill-animate bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer" style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; letter-spacing: 0.05em;">
+                            ☀️ FOTOWOLTAIKA
                         </div>
-                        <div class="pill-animate bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer" style="animation-delay: 1.3s;">
-                            🔥 Pompy Ciepła
+                        <div class="pill-animate bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer" style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; letter-spacing: 0.05em; animation-delay: 1.3s;">
+                            🔥 POMPY CIEPŁA
                         </div>
-                        <div class="pill-animate bg-gradient-to-r from-purple-500 to-pink-500 text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer" style="animation-delay: 1.4s;">
-                            🔋 Magazyny Energii
+                        <div class="pill-animate bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer" style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; letter-spacing: 0.05em; animation-delay: 1.4s;">
+                            🔋 MAGAZYNY ENERGII
                         </div>
-                        <div class="pill-animate bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer" style="animation-delay: 1.5s;">
-                            ❄️ Klimatyzacja
+                        <div class="pill-animate bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all hover:scale-105 cursor-pointer" style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; letter-spacing: 0.05em; animation-delay: 1.5s;">
+                            ❄️ KLIMATYZACJA
                         </div>
                     </div>
                     
