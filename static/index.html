@@ -184,6 +184,133 @@
         html {
             scroll-behavior: smooth;
         }
+        
+        /* Sunrise Animation - Strona rozjaśnia się jak panele fotowoltaiczne */
+        body {
+            animation: sunrise 3s ease-out forwards;
+        }
+        
+        @keyframes sunrise {
+            0% {
+                filter: brightness(0.3) saturate(0);
+                background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+            }
+            30% {
+                filter: brightness(0.5) saturate(0.3);
+            }
+            60% {
+                filter: brightness(0.8) saturate(0.7);
+            }
+            100% {
+                filter: brightness(1) saturate(1);
+                background: linear-gradient(180deg, #f9fafb 0%, #e0f2fe 100%);
+            }
+        }
+        
+        /* Hero Section Gradient Animation */
+        .hero-sunrise {
+            animation: heroGradient 3s ease-out forwards;
+        }
+        
+        @keyframes heroGradient {
+            0% {
+                background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            }
+            40% {
+                background: linear-gradient(135deg, #374151 0%, #4b5563 50%, #374151 100%);
+            }
+            70% {
+                background: linear-gradient(135deg, #93c5fd 0%, #bfdbfe 50%, #dbeafe 100%);
+            }
+            100% {
+                background: linear-gradient(135deg, #f9fafb 0%, #dbeafe 50%, #d1fae5 100%);
+            }
+        }
+        
+        /* Elements Fade In Like Solar Panels Turning On */
+        .fade-in-sunrise {
+            opacity: 0;
+            animation: fadeInUp 2s ease-out 0.5s forwards;
+        }
+        
+        .fade-in-sunrise-delay-1 {
+            opacity: 0;
+            animation: fadeInUp 2s ease-out 1s forwards;
+        }
+        
+        .fade-in-sunrise-delay-2 {
+            opacity: 0;
+            animation: fadeInUp 2s ease-out 1.5s forwards;
+        }
+        
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Color Pills Animation - From Grayscale to Color */
+        .pill-animate {
+            animation: colorBurst 2s ease-out 1.2s forwards;
+            filter: grayscale(1) brightness(0.5);
+        }
+        
+        @keyframes colorBurst {
+            0% {
+                filter: grayscale(1) brightness(0.5);
+                transform: scale(0.9);
+            }
+            50% {
+                filter: grayscale(0.5) brightness(0.8);
+                transform: scale(1.05);
+            }
+            100% {
+                filter: grayscale(0) brightness(1);
+                transform: scale(1);
+            }
+        }
+        
+        /* Video Player Reveal */
+        .video-reveal {
+            opacity: 0;
+            animation: videoReveal 2.5s ease-out 1s forwards;
+        }
+        
+        @keyframes videoReveal {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) rotateY(20deg);
+                filter: grayscale(1) brightness(0.3);
+            }
+            60% {
+                filter: grayscale(0.5) brightness(0.7);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotateY(0deg);
+                filter: grayscale(0) brightness(1);
+            }
+        }
+        
+        /* Stats Cards Glow Effect */
+        .stat-glow {
+            animation: statGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes statGlow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(16, 185, 129, 0.6), 0 0 60px rgba(16, 185, 129, 0.4);
+            }
+        }
+        
         .gradient-azure {
             background: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%);
         }
@@ -308,13 +435,13 @@
     </header>
 
     <!-- Hero Section - Clean Split Layout (No Overlap) -->
-    <section class="relative min-h-screen flex items-center bg-gradient-to-br from-gray-50 via-blue-50 to-green-50">
+    <section class="relative min-h-screen flex items-center hero-sunrise">
         <!-- Content Container - Split into 2 Columns on Desktop -->
         <div class="container mx-auto px-4 py-16">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 
                 <!-- LEFT SIDE - Text Content (NO Video Behind) -->
-                <div class="text-left space-y-8">
+                <div class="text-left space-y-8 fade-in-sunrise">
                     <!-- Logo Badge -->
                     <div class="inline-flex items-center bg-white rounded-2xl p-4 shadow-xl border-2 border-green-400">
                         <div class="relative group">
@@ -369,23 +496,23 @@
                     </div>
                     
                     <!-- Key Features Pills -->
-                    <div class="flex flex-wrap gap-3">
-                        <div class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
+                    <div class="flex flex-wrap gap-3 fade-in-sunrise-delay-1">
+                        <div class="pill-animate bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
                             ☀️ Fotowoltaika
                         </div>
-                        <div class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
+                        <div class="pill-animate bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer" style="animation-delay: 1.3s;">
                             🔥 Pompy Ciepła
                         </div>
-                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
+                        <div class="pill-animate bg-gradient-to-r from-purple-500 to-pink-500 text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer" style="animation-delay: 1.4s;">
                             🔋 Magazyny Energii
                         </div>
-                        <div class="bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
+                        <div class="pill-animate bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-5 py-3 rounded-full text-sm font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer" style="animation-delay: 1.5s;">
                             ❄️ Klimatyzacja
                         </div>
                     </div>
                     
                     <!-- CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="flex flex-col sm:flex-row gap-4 fade-in-sunrise-delay-2">
                         <a href="kalkulator.html" class="group relative inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-lg shadow-2xl transition-all transform hover:scale-105">
                             <div class="absolute inset-0 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 rounded-xl"></div>
                             <span class="relative text-white flex items-center gap-2">
@@ -420,9 +547,9 @@
                 </div>
                 
                 <!-- RIGHT SIDE - Interactive Video Player (SEPARATE, NO OVERLAP) -->
-                <div class="relative">
+                <div class="relative video-reveal">
                     <!-- Video Container with Controls -->
-                    <div class="relative bg-white rounded-3xl shadow-2xl p-4 border-4 border-green-400">
+                    <div class="relative bg-white rounded-3xl shadow-2xl p-4 border-4 border-green-400 stat-glow">
                         <!-- Decorative Glow -->
                         <div class="absolute -inset-2 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-400 rounded-3xl blur-xl opacity-20"></div>
                         
